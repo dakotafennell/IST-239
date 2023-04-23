@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!--
+    Louis Fennell III, February 05, 2023, IST-239-W01, Hands-On Project 5-5
+
+    This project file, project05-05.html, is the main HTML file for the Hands-On Project 5-5. This
+    file contains the HTML code for the Concentration Game. This project is a simple matching tiles
+    game. The game is played by clicking on any tile to flip it and show the image on its back. The
+    games tiles are contained inside the div element with the id "board". Each tile, stored as a 
+    div element with the ID, "tile", has two image elements, one with the class, "front" and the 
+    other with the class, "back". The "front" image is the match picture and the "back" image is 
+    the shown back of the tile. When the tiles "back" is clicked a function is called that moves 
+    the "front" image to the visible layer and the "back" image to the hidden layer and moves the 
+    "back" image to the invisible layer. The game ends when all tiles are matched. The game can be
+    restarted by reloading the web page.
+
+    JavaScript 7th Edition
+    Chapter 5
+    Hands-on Project 5-5
+
+    Author: Louis Fennell III
+    Date:   02/05/2023
+
+    Filename: project05-05.html
+   -->
+<!-- Meta element (<meta/>) that uses the backwards compatible charset attribute of "utf-8". -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<!-- Title element (<title>) that displays the name of the project at the top of the screen on the web browser's tab. -->
+<title>Hands-on Project 5-5</title>
+<!-- Link element (<link>) that links to the provided stylesheet to display custom formatting of the web page. -->
+<link rel="stylesheet" href="styles.css" />
+<!-- Added link to JavaScript source, deferred to load after completion of the HTML loading. -->
+<script src="project05-05.js" defer></script>
+</head>
+
+<body>
+    <!-- Opening header (<header>) element that contains the h1 header. -->
+    <header>
+        <!-- h1 element displays the title of the project at the top of the page. -->
+        <h1> Hands-on Project 5-5 </h1>
+    </header>
+   
+    <section>
+        <!-- Div element (<div>) with the element ID, "instruction" that contains the title of the
+        game, Concentration Game, enclosed in a heading element (h2) and the games instructions, 
+        enclosed in a paragraph element (<p>) -->
+        <div id="instruction">
+            <h2>Concentration Game</h2>
+            <p>Click on any tile to flip it and show
+                the image on the back. Matching images will
+                stay up the board. Mismatched images will
+                flip over after a 1-second delay. Locate all
+                eight pairs of matching images.</p>
+            <p>To play again
+                and rescramble the board, reload the web page.
+            </p>
+        </div>
+        
+        <!-- Div element (<div>) with the element ID, "board" that contains the games tiles. Each tile
+        is enclosed in a div element (<div>) with the class, "tile". Each tile contains two images, one
+        with the class, "front" and the other with the class, "back". The "front" image is the image that
+        is displayed on the front of the tile. The "back" image is the image that is displayed on the back
+        of the tile. -->
+        <div id="board">
+            <!-- Div element (<div>) with the class, "tile" that contains the first tile. -->
+            <div class="tile">
+                <!-- Image element (<img>) with the class, "front" that contains the image that is 
+                displayed on the front of the tile. this tile uses the image source, photo01.jpg -->
+                <img src="photo01.jpg" alt="" class="front">
+                <!-- Image element (<img>) with the class, "back" that contains the image that is
+                displayed on the back of the tile. This tile uses the image source, back.jpg -->
+                <img src="back.jpg" alt="" class="back">
+            </div>
+            <!-- Div element (<div>) with the class, "tile" that contains the second tile. -->
+            <div class="tile">
+                <!-- Image element (<img>) with the class, "front" that contains the image that is 
+                displayed on the front of the tile. this tile uses the image source, photo01.jpg -->
+                <img src="photo01.jpg" alt="" class="front">
+                <!-- Image element (<img>) with the class, "back" that contains the image that is
+                displayed on the back of the tile. This tile uses the image source, back.jpg -->
+                <img src="back.jpg" alt="" class="back">
+            </div>
+            <!-- Div element (<div>) with the class, "tile" that contains the third tile. -->
+            <div class="tile">
+                <!-- Image element (<img>) with the class, "front" that contains the image that is
+                displayed on the front of the tile. This tile uses the image source, photo02.jpg -->
+                <img src="photo02.jpg" alt="" class="front">
+                <!-- Image element (<img>) with the class, "back" that contains the image that is
+                displayed on the back of the tile. This tile uses the image source, back.jpg -->
+                <img src="back.jpg" alt="" class="back">
+            </div>
+            <!-- Div element (<div>) with the class, "tile" that contains the fourth tile. -->
+            <div class="tile">
+                <!-- Image element (<img>) with the class, "front" that contains the image that is
+                displayed on the front of the tile. This tile uses the image source, photo02.jpg -->
+                <img src="photo02.jpg" alt="" class="front">
+                <!-- Image element (<img>) with the class, "back" that contains the image that is
+                displayed on the back of the tile. This tile uses the image source, back.jpg -->
+                <img src="back.jpg" alt="" class="back">
+            </div>
+            <!-- Div element (<div>) with the class, "tile" that contains the fifth tile. -->
+            <div class="tile">
+                <!-- Image element (<img>) with the class, "front" that contains the image that is
+                displayed on the front of the tile. This tile uses the image source, photo03.jpg -->
+                <img src="photo03.jpg" alt="" class="front">
+                <!-- Image element (<img>) with the class, "back" that contains the image that is
+                displayed on the back of the tile. This tile uses the image source, back.jpg -->
+                <img src="back.jpg" alt="" class="back">
+            </div>
+            <!-- Div element (<div>) with the class, "tile" that contains the sixth tile. -->
+            <div class="tile">
+                <!-- Image element (<img>) with the class, "front" that contains the image that is
+                displayed on the front of the tile. This tile uses the image source, photo03.jpg -->
+                <img src="photo03.jpg" alt="" class="front">
+                <!-- Image element (<img>) with the class, "back" that contains the image that is
+                displayed on the back of the tile. This tile uses the image source, back.jpg -->
+                <img src="back.jpg" alt="" class="back">
+            </div>
+            <!-- Div element (<div>) with the class, "tile" that contains the seventh tile. -->
+            <div class="tile">
+                <!-- Image element (<img>) with the class, "front" that contains the image that is
+                displayed on the front of the tile. This tile uses the image source, photo04.jpg -->
+                <img src="photo04.jpg" alt="" class="front">
+                <!-- Image element (<img>) with the class, "back" that contains the image that is
+                displayed on the back of the tile. This tile uses the image source, back.jpg -->
+                <img src="back.jpg" alt="" class="back">
+            </div>
+            <!-- Div element (<div>) with the class, "tile" that contains the eighth tile. -->
+            <div class="tile">
+                <!-- Image element (<img>) with the class, "front" that contains the image that is
+                displayed on the front of the tile. This tile uses the image source, photo04.jpg -->
+                <img src="photo04.jpg" alt="" class="front">
+                <!-- Image element (<img>) with the class, "back" that contains the image that is
+                displayed on the back of the tile. This tile uses the image source, back.jpg -->
+                <img src="back.jpg" alt="" class="back">
+            </div>
+            <!-- Div element (<div>) with the class, "tile" that contains the ninth tile. -->
+            <div class="tile">
+                <!-- Image element (<img>) with the class, "front" that contains the image that is
+                displayed on the front of the tile. This tile uses the image source, photo05.jpg -->
+                <img src="photo05.jpg" alt="" class="front">
+                <!-- Image element (<img>) with the class, "back" that contains the image that is
+                displayed on the back of the tile. This tile uses the image source, back.jpg -->
+                <img src="back.jpg" alt="" class="back">
+            </div>
+            <!-- Div element (<div>) with the class, "tile" that contains the tenth tile. -->
+            <div class="tile">
+                <!-- Image element (<img>) with the class, "front" that contains the image that is
+                displayed on the front of the tile. This tile uses the image source, photo05.jpg -->
+                <img src="photo05.jpg" alt="" class="front">
+                <!-- Image element (<img>) with the class, "back" that contains the image that is
+                displayed on the back of the tile. This tile uses the image source, back.jpg -->
+                <img src="back.jpg" alt="" class="back">
+            </div>
+            <!-- Div element (<div>) with the class, "tile" that contains the eleventh tile. -->
+            <div class="tile">
+                <!-- Image element (<img>) with the class, "front" that contains the image that is
+                displayed on the front of the tile. This tile uses the image source, photo06.jpg -->
+                <img src="photo06.jpg" alt="" class="front">
+                <!-- Image element (<img>) with the class, "back" that contains the image that is
+                displayed on the back of the tile. This tile uses the image source, back.jpg -->
+                <img src="back.jpg" alt="" class="back">
+            </div>
+            <!-- Div element (<div>) with the class, "tile" that contains the twelfth tile. -->
+            <div class="tile">
+                <!-- Image element (<img>) with the class, "front" that contains the image that is
+                displayed on the front of the tile. This tile uses the image source, photo06.jpg -->
+                <img src="photo06.jpg" alt="" class="front">
+                <!-- Image element (<img>) with the class, "back" that contains the image that is
+                displayed on the back of the tile. This tile uses the image source, back.jpg -->
+                <img src="back.jpg" alt="" class="back">
+            </div>
+            <!-- Div element (<div>) with the class, "tile" that contains the thirteenth tile. -->
+            <div class="tile">
+                <!-- Image element (<img>) with the class, "front" that contains the image that is
+                displayed on the front of the tile. This tile uses the image source, photo07.jpg -->
+                <img src="photo07.jpg" alt="" class="front">
+                <!-- Image element (<img>) with the class, "back" that contains the image that is
+                displayed on the back of the tile. This tile uses the image source, back.jpg -->
+                <img src="back.jpg" alt="" class="back">
+            </div>
+            <!-- Div element (<div>) with the class, "tile" that contains the fourteenth tile. -->
+            <div class="tile">
+                <!-- Image element (<img>) with the class, "front" that contains the image that is
+                displayed on the front of the tile. This tile uses the image source, photo07.jpg -->
+                <img src="photo07.jpg" alt="" class="front">
+                <!-- Image element (<img>) with the class, "back" that contains the image that is
+                displayed on the back of the tile. This tile uses the image source, back.jpg -->
+                <img src="back.jpg" alt="" class="back">
+            </div>
+            <!-- Div element (<div>) with the class, "tile" that contains the fifteenth tile. -->
+            <div class="tile">
+                <!-- Image element (<img>) with the class, "front" that contains the image that is
+                displayed on the front of the tile. This tile uses the image source, photo08.jpg -->
+                <img src="photo08.jpg" alt="" class="front">
+                <!-- Image element (<img>) with the class, "back" that contains the image that is
+                displayed on the back of the tile. This tile uses the image source, back.jpg -->
+                <img src="back.jpg" alt="" class="back">
+            </div>
+            <!-- Div element (<div>) with the class, "tile" that contains the sixteenth and final tile. -->
+            <div class="tile">
+                <!-- Image element (<img>) with the class, "front" that contains the image that is
+                displayed on the front of the tile. This tile uses the image source, photo08.jpg -->
+                <img src="photo08.jpg" alt="" class="front">
+                <!-- Image element (<img>) with the class, "back" that contains the image that is
+                displayed on the back of the tile. This tile uses the image source, back.jpg -->
+                <img src="back.jpg" alt="" class="back">
+            </div>         
+        <!-- Closing div element (</div>) for the element with the ID, "board". -->
+        </div>
+    <!-- Closing section (</section>) element. -->
+    </section>
+
+<!-- Closing body (</body>) element. -->
+</body>
+<!-- Closing HTML (</html>) element. Everything enclosed from <html> to </html> contains the web pages entire contents. -->
+</html>
