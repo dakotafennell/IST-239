@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--
+        Louis Fennell III, February 13, 2023, IST-239-W01, Hands-On Project 7-1
+
+        This HTML file, project07-01.html, is a simple form for the user to enter their chosen 
+        username and password. This file will call the JavaScript file, project07-01.js, to 
+        validate the user's input. If the JavaScript file determines that the user's input is 
+        valid, the form will be submitted and the user will be directed to the formsubmit.html
+        file using the "get" method. If the JavaScript file determines that the user's input is
+        invalid, the form will not be submitted and the user will be prompted to enter valid
+        information.
+
+        JavaScript 7th Edition
+        Chapter 7
+        Hands-on Project 7-1
+
+        Author: Louis Fennell III
+        Date:   02/13/2023
+
+        Filename: project07-01.html
+    -->
+    <!-- Meta element (<meta/>) that uses the backwards compatible charset attribute of "utf-8". -->
+    <meta charset="utf-8" />
+    <!-- Meta element (<meta/>) that uses the viewport attribute to set the width of the viewport to the width of the device. -->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!-- Title element (<title>) that displays the name of the project at the top of the screen on the web browser's tab. -->
+    <title>Hands-on Project 7-1</title>
+    <!-- Link element (<link>) that links to the provided stylesheet to display custom formatting of the web page. -->
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Added link to JavaScript source, deferred to load after completion of the HTML loading. -->
+    <script src="project07-01.js" defer></script>
+</head>
+
+<body>
+    <!-- Opening header (<header>) element that contains the h1 header. -->
+    <header>
+        <!-- Heading element (<h1>) displays the title of the project at the top of the page, 
+        Hands-on Project 7-1. -->
+        <h1>
+            Hands-on Project 7-1
+        </h1>
+    </header>
+
+    <section>
+        <!-- Heading element (<h1>) displays the title of the form, Create your Account. -->
+        <h1>Create your Account</h1>
+        <!-- Form element (<form>) that contains the input elements for the user to enter their
+        information. This element has the id, "signup", and calls the "get" method when completed
+        which will load the web page, formsubmit.html. -->
+        <form id="signup" name="signup" method="get" action="formsubmit.html">
+            <fieldset>
+                <legend>Enter your Account Information</legend>
+                <!-- Label element (<label>) that displays the text, "Username" next to the input
+                element. -->
+                <!-- Label element (<label>) that displays the text, "Username" and is linked to 
+                the input element with the id, "user". -->
+                <label for="user">Username</label>
+                <!-- Input element (<input>) that is a text box that the user can enter their 
+                username into. This element has the id, "user", and is required to be filled out. -->
+                <input type="text" id="user" name="user" required />
+
+                <!-- Label element (<label>) that displays the text, "Password" and is linked to
+                the input element with the id, "pwd". -->
+                <label for="pwd">Password</label>
+                <!-- Input element (<input>) that is a text box that the user can enter their
+                password into. This element has the id, "pwd", and is required to be filled out. -->
+                <input type="password" id="pwd" name="pwd" required /> 
+                
+                <!-- Label element (<label>) that displays the text, "Confirm Password" and is
+                linked to the input element with the id, "pwd2". -->
+                <div id="feedback"></div>
+                
+                <!-- Input element (<input>) that is a submit button that the user can click to
+                submit the form. -->
+                <input type="submit" id="submitButton" value="Save" />
+            </fieldset>
+        </form>
+    </section>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <!--
+      Louis Fennell III, February 13, 2023, IST-239-W01, Hands-On Project 7-1
+
+      This file, formsubmit.html, is the HTML file that displays the account information entered
+      by the user in the project07-01.html file. This page will display the username and password 
+      entered by the user in the project07-01.html file in the table with the id, "account". This
+      file is loaded when the user submits the form in the project07-01.html file (after it is 
+      validated by the project07-01.js file).
+
+      JavaScript 7th Edition
+      Chapter 7
+      Hands-on Project 7-1
+
+      Author: Louis Fennell III
+      Date:   02/13/2023
+
+      Filename: formsubmit.html
+   -->
+   <!-- Meta element (<meta/>) that uses the backwards compatible charset attribute of "utf-8". -->
+   <meta charset="utf-8" />
+   <!-- Meta element (<meta/>) that uses the viewport attribute to set the width of the viewport to the width of the device. -->
+   <meta name="viewport" content="width=device-width,initial-scale=1.0">
+   <!-- Title element (<title>) that displays the name of the project at the top of the screen on the web browser's tab. -->
+   <title>Hands-on Project 7-1</title>
+   <!-- Link element (<link>) that links to the provided stylesheet to display custom formatting of the web page. -->
+   <link rel="stylesheet" href="styles.css" />
+   <!--
+      Added script to retrieve the field/value pairs from the URL and write the field values to the account table.
+    -->
+   <script>
+      window.addEventListener("load", function(){   
+         // Retrieve the field/value pairs from the URL
+         var formData = location.search.slice(1);
+         formData = formData.replace(/\+/g," ");
+         formData = decodeURIComponent(formData);
+         let formFields = formData.split(/[&=]/g);
+
+         // Write the field values to the account table
+         document.getElementById("username").textContent = formFields[1]; 
+         document.getElementById("pwd").textContent = formFields[3];          
+      } );   
+   </script>
+</head>
+
+<body>
+   <header>
+      <!-- Heading element (<h1>) displays the title of the project at the top of the page, 
+         Hands-on Project 7-1. -->
+      <h1>
+         Hands-on Project 7-1
+      </h1>
+   </header>
+
+   <section>
+      <!--  Heading element (<h1>) displays  -->
+      <h1>Account Information</h1>
+      <table id="account">
+         <tr>
+            <td>Username</td>
+            <td><span id="username"></span></td>
+         </tr>
+         <tr>
+            <td>Password</td>
+            <td><span id="pwd"></span></td>
+         </tr>             
+      </table>
+   </section>
+</body>
+</html>
