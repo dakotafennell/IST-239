@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <!--
+      Louis Fennell III, February 10, 2023, IST-239-W01, Hands-On Project 6-5
+
+      This file, project06-05.html, is the HTML file for the Hands-on Project 6-5. This web page is
+      a registration page for a conference. The user can enter their information into the text boxes
+      on the left side of the page and after selecting their session pack and banquet options, the 
+      right side of the page will display the users entered information alongside the total cost of
+      their registration. The user can then click the "Register" button to submit their information
+      and be redirected to the formsubmit.html page.
+
+      JavaScript 7th Edition
+      Chapter 6
+      Hands-on Project 6-5
+
+      Author: Louis Fennell III
+      Date:   02/10/2023
+
+      Filename: project06-05.html
+   -->
+   <!-- Meta element (<meta/>) that uses the backwards compatible charset attribute of "utf-8". -->
+   <meta charset="utf-8" />
+   <!-- Meta element (<meta/>) that uses the viewport attribute to set the width of the viewport to the width of the device. -->
+   <meta name="viewport" content="width=device-width,initial-scale=1.0">
+   <!-- Title element (<title>) that displays the name of the project at the top of the screen on the web browser's tab. -->
+   <title>Hands-on Project 6-5</title>
+   <!-- Link element (<link>) that links to the provided stylesheet to display custom formatting of the web page. -->
+   <link rel="stylesheet" href="styles.css" />
+   <!-- Added link to JavaScript source, deferred to load after completion of the HTML loading. -->
+   <script src="project06-05.js" defer></script>
+</head>
+
+<body>
+   <!-- Opening header (<header>) element that contains the h1 header. -->
+   <header>
+      <!-- Heading element (<h1>) displays the title of the project at the top of the page. -->
+      <h1>
+         Hands-on Project 6-5
+      </h1>
+   </header>
+
+   <article>
+   <section>
+      <!-- Heading element (<h1>) that displays the function of the web page, registering for a 
+      conference. -->
+      <h1>Registration Page</h1>
+      <!-- Form element (<form>) that contains the input elements for the user to enter their
+      information. This element has the id, "register", and calls the "get" method when completed
+      which will load the web page, formsubmit.html. -->
+      <form id="register" name="register" method="get" action="formsubmit.html">
+         <fieldset id="contactInfo">
+            <!-- Label element (<label>) that displays the text, "First Name" with an * to show it 
+            is a required field and is linked to the input element with the id, "fnBox". -->
+            <label for="fnBox">First Name*</label>
+            <!-- Input element (<input>) that is a text box that the user can enter their first name
+            into. This element has the id, "fnBox", and is required to be filled out. -->
+            <input name="firstName" id="fnBox" type="text" required />
+
+            <!-- Label element (<label>) that displays the text, "Last Name" with an * to show it 
+            is a required field and is linked to the input element with the id, "lnBox". -->
+            <label for="lnBox">Last Name*</label>
+            <!-- Input element (<input>) that is a text box that the user can enter their last name
+            into. This element has the id, "lnBox", and is required to be filled out. -->
+            <input name="lastName" id="lnBox" type="text" required />
+
+            <!-- Label element (<label>) that displays the text, "Company or University" and is linked
+            to the input element with the id, "groupBox". -->
+            <label for="groupBox">Company or University</label>
+            <!-- Input element (<input>) that is a text box that the user can enter their company
+            or university name into. This element has the id, "groupBox". -->
+            <input name="group" id="groupBox" type="text" />
+
+            <!-- Label element (<label>) that displays the text, "E-mail" with an * to show it
+            is a required field and is linked to the input element with the id, "mailBox". -->
+            <label for="mailBox">E-mail*</label>
+            <!-- Input element (<input>) that is a text box that the user can enter their e-mail
+            into. This element has the id, "mailBox", and is required to be filled out. -->
+            <input name="email" id="mailBox" type="email" required />
+
+            <!-- Label element (<label>) that displays the text, "Phone Number" with an * to show it
+            is a required field and is linked to the input element with the id, "phoneBox". -->
+            <label for="phoneBox">Phone Number*</label>
+            <!-- Input element (<input>) that is a text box that the user can enter their phone number
+            into. This element has the id, "phoneBox", and is required to be filled out. The pattern
+            attribute is used to validate the input to be a 10 digit phone number matching the, 
+            (XXX) XXX-XXXX, pattern. -->
+            <input name="phoneNumber" id="phoneBox" type="tel" pattern="^\d{10}$|^(\(\d{3}\)\s*)?\d{3}[\s-]?\d{4}$"
+                   required placeholder="(nnn) nnn-nnnn" />
+         </fieldset>
+         
+         <fieldset id="confChoices">
+            <!-- Label element (<label>) that displays the text, "Session Packs" and is linked to the
+            select element with the id, "sessionBox". -->
+            <label for="sessionBox">Session Packs</label>
+            <!-- Select element (<select>) that is a drop down menu that the user can select their
+            session pack from. This element has the id, "sessionBox", and is required to be filled
+            out. This selection box contains 5 options. -->
+            <select id="sessionBox" name="sessionOption" size="5" required>
+               <option value="95">Exhibits Only ($95)</option>
+               <option value="215">3 Session Pack ($215)</option>
+               <option value="420">6 Session Pack ($420)</option>
+               <option value="595">Session Pass ($595)</option>
+               <option value="845">VIP Pass ($845)</option>
+            </select>
+            <!-- Label element (<label>) that displays the text, "Banquet" and is linked to the input
+            element with the id, "banquetBox". -->
+            <label for="banquet">MAS22 Banquet ($55 ea.)</label>
+            <!-- Input element (<input>) that is a number box that the user can enter the number of
+            banquet attendees into. This element has the id, "banquetBox", and is required to be
+            filled out. The min and max attributes are used to limit the number of attendees to
+            between 0 and 10. -->
+            <input type="number" min="0" max="10" id="banquetBox" name="banquetGuests" /><span> attendees</span>
+            
+            <!-- Label element (<label>) that displays the text, "Media Pack" and is linked to the input
+            element checkbox with the id, "mediaCB". -->
+            <label for="mediaPack">MAS22 Media Pack ($115)</label>
+            <!-- Input element (<input>) that is a checkbox that the user can select if they want to
+            purchase a media pack. This element has the id, "mediaCB", and is required to be filled
+            out. -->
+            <input type="checkbox" name="mediaPack" id="mediaCB" value="115" />
+               
+         </fieldset>
+         
+         <!-- Input element (<input>) that is a submit button that will submit the form when clicked. -->
+         <input id="regSubmit" type="submit" value="continue" />
+      </form>
+   </section>
+   
+   <!-- Aside element (<aside>) that contains the shopping cart table, which contains the users
+   information that was entered on the left side of the web page. -->
+   <aside id="reg1Aside">
+      <table>
+         <!-- Caption element (<caption>) that displays the title of the table, "Shopping Cart". -->
+         <caption>Shopping Cart</caption>
+         <!-- Table row element (<tr>) that contains the table header element (<th>) that displays
+         the name of the information, and the table data element (<td>) that displays the information
+         that the user entered. -->
+         <tr><th>Name</th><td><span id="regName"></span></td></tr>
+         <!-- Table row element (<tr>) that contains the table header element (<th>) that displays
+         this sections title, Company, and the table data element (<td>) that displays the information
+         that the user entered in the "regGroup" field. -->
+         <tr><th>Company</th><td><span id="regGroup"></span></td></tr>
+         <!-- Table row element (<tr>) that contains the table header element (<th>) that displays
+         this sections title, E-mail, and the table data element (<td>) that displays the information
+         that the user entered in the "regEmail" field. -->
+         <tr><th>E-mail</th><td><span id="regEmail"></span></td></tr>
+         <!-- Table row element (<tr>) that contains the table header element (<th>) that displays
+         this sections title, Phone, and the table data element (<td>) that displays the information
+         that the user entered in the "regPhone" field. -->
+         <tr><th>Phone</th><td><span id="regPhone"></span></td></tr>
+         <!-- Table row element (<tr>) that contains the table header element (<th>) that displays
+         this sections title, Session, and the table data element (<td>) that displays the information
+         that the user entered in the "regSession" field. -->
+         <tr><th>Session</th><td><span id="regSession"></span></td></tr>
+         <!-- Table row element (<tr>) that contains the table header element (<th>) that displays
+         this sections title, Banquet Guests, and the table data element (<td>) that displays the information
+         that the user entered in the "regBanquet" field. -->
+         <tr><th>Banquet Guests ($55 ea.)</th><td><span id="regBanquet"></span></td></tr>
+         <!-- Table row element (<tr>) that contains the table header element (<th>) that displays
+         this sections title, Media Pack, and the table data element (<td>) that displays the information
+         that the user entered in the "regPack" field. -->
+         <tr><th>Media Pack ($115)</th><td><span id="regPack"></span></td></tr>
+         <!-- Table row element (<tr>) that contains the table header element (<th>) that displays
+         this sections title, TOTAL, and the table data element (<td>) that displays the information
+         that the is calculated in the, project06-05.js, file. -->
+         <tr><th>TOTAL</th><td><span id="regTotal"></span></td></tr>
+      </table>
+   </aside>
+   </article>
+</body>
+</html>
