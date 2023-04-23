@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <!--
+		Louis Fennell III, April 06, 2023, IST-239-W01, Hands-On Project 12-1
+		
+		This file, project12-01.html, is the HTML file for the Hands-On Project 12-1. This website is
+      a simple website that is for a fictional sea life cruise company. The website has a dropdown
+      menu that allows the user to select a cruise and then displays the information about the cruise
+      in the main content area of the page. The website also has a footer that displays the name of
+      the company and its location. The website uses jQuery code in the project12-01.js file to
+      allow the dropdown menus to function.
+		
+      JavaScript 7th Edition
+      Chapter 12
+      Project 12-1
+
+      Project to display a dropdown menu
+      Author: Louis Fennell III
+      Date:   4/06/2023
+
+      Filename: project12-01.html
+   -->
+	<!-- Meta element (<meta/>) that uses the backwards compatible charset attribute of "utf-8". -->
+   <meta charset="utf-8" />
+	<!-- Meta element (<meta>) that uses the viewport attribute to set the width of the viewport to
+	the width of the device. -->
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <!-- Title element (<title>) that displays the name of the project at the top of the screen on 
+   the web browser's tab. -->
+   <title>Hands-on Project 12-1</title>
+	<!-- Link element (<link>) that links to the provided stylesheet to display custom formatting of
+   the web page. -->
+   <link rel="stylesheet" href="styles.css" />  
+	<!-- Added link to the latest minified jQuery source (3.6.4). The integrity and crossorigin 
+	attributes are used for SRI checking to ensure that resources hosted on third-party servers have 
+	not been tampered with. -->
+	<script
+      src="https://code.jquery.com/jquery-3.6.4.min.js"
+      integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
+      crossorigin="anonymous">
+	</script>
+	<!-- Added link to JavaScript source, project12-01.js, deferred until the page has loaded. -->
+	<script src="project12-01.js" defer></script>
+</head>
+
+<body>
+   <header>
+		<!-- Heading element (<h1>) displays the title of the project at the top of the page,
+      Hands-on Project 12-1. -->
+      <h1>
+         Hands-on Project 12-1
+      </h1>
+   </header>
+
+   <section>
+      <header>
+			<!-- Heading element (<h1>) that displays the title of the web page, 
+			Wildlife Sea Cruises. -->
+         <h1>Wildlife Sea Cruises</h1>         
+         <nav>
+            <!-- Unordered list element (<ul>) with the id, "mainmenu" that displays the navigation menu. -->
+            <ul id="mainmenu">
+               <!-- List item element (<li>) with the class, "submenu" that displays the links to 
+               the four different types of cruises. -->
+               <li class="submenu">Cruises
+                  <ul>
+                     <li><a href="#">Whale watching</a></li>
+                     <li><a href="#">Birding</a></li>
+                     <li><a href="#">Dinner</a></li>
+                     <li><a href="#">School field trips</a></li>
+                  </ul>
+               </li>
+               <!-- List item element (<li>) with the class, "submenu" that displays the links to
+               the four different rates. -->
+               <li class="submenu">Rates
+                  <ul>
+                     <li><a href="#">Children (0-17)</a></li>
+                     <li><a href="#">Adults</a></li>
+                     <li><a href="#">Seniors (60+)</a></li>
+                     <li><a href="#">Groups</a></li>
+                  </ul>
+               </li>
+               <!-- List item element (<li>) with the class, "submenu" that displays the links to
+               the three different directions. -->
+               <li class="submenu">Directions
+                  <ul>
+                     <li><a href="#">From the north</a></li>
+                     <li><a href="#">From the south</a></li>
+                     <li><a href="#">From the east</a></li>
+                  </ul>
+               </li>
+            </ul>
+         </nav>       
+      </header>
+      
+      <!-- Aside element (<aside>) with the class, "calendar" that displays the types of animals
+      that can be seen during the different seasons. -->
+      <aside class="calendar">
+         <!-- Heading element (<h3>) that displays the heading, "Winter". -->
+         <h3>Winter</h3>
+         <!-- Unordered list element (<ul>) that displays the types of animals that can be seen
+         during the winter season. -->
+         <ul>
+            <li>Whales</li>
+            <li>Elephant seals</li>
+         </ul>
+         <!-- Heading element (<h3>) that displays the heading, "Spring & Summer". -->
+         <h3>Spring &amp; Summer</h3>
+         <!-- Unordered list element (<ul>) that displays the types of animals that can be seen
+         during the spring and summer seasons. -->
+         <ul>
+            <li>Whales</li>
+            <li>Seabirds</li>
+            <li>Sea lions</li>
+         </ul>
+         <!-- Heading element (<h3>) that displays the heading, "Autumn". -->
+         <h3>Autumn</h3>
+         <!-- Unordered list element (<ul>) that displays the types of animals that can be seen
+         during the autumn season. -->
+         <ul>
+            <li>Whales</li>
+            <li>Sharks</li>
+         </ul>
+      </aside>
+      
+      <article>
+        
+         <!-- Heading element (<h2>) that displays the heading, "Sea life as you've never seen it before!". -->
+         <h2>Sea life as you've never seen it before!</h2>
+         <!-- Div element (<div>) that displays the image of a pod of dolphins swimming above and 
+         below the surface of the ocean. -->
+         <div>
+            <img src="dolphins.jpg" alt="a pod of dolphins swimming above and below the surface of the ocean" />
+         </div>
+      </article>   
+      
+      <!-- Aside element (<aside>) with the class, "testimonials" that displays the testimonials
+      from different customers. -->
+      <aside class="testimonials">
+         <p>"What an experience! My daughters were thrilled to see so many animals up close."</p>
+         <p>"The crew was knowledgable and answered any question we had about what we were seeing."</p>
+         <p>"Make sure there's room on your camera! I barely stopped shooting at all, there was so much to see."</p>
+      </aside>
+      
+   </section>
+   <!-- Footer element (<footer>) that displays the name of the company, Wildlife Sea Cruises, at the
+   bottom of the page. -->
+   <footer>Wildlife Sea Cruises <span>&bull;</span> Monterey, CA</footer>
+</body>
+</html>
