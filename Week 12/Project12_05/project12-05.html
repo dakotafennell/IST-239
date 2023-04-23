@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <!--
+		Louis Fennell III, April 06, 2023, IST-239-W01, Hands-On Project 12-5v
+		
+		This file, project12-01.html, is one of the two HTML files for the Hands-On Project 12-5. 
+      This project is a user account creation form that validates the user's input using jQuery.
+      The project12-05.js file contains the jQuery code to validate the user's input but initially
+      their are several errors in the code. The form uses the get method to send the form data to 
+      the server. The action attribute is set to formsubmit.html to display the form data on the 
+      web page in a table after submitting it. The form uses the required attribute to set the 
+      fields as required.
+		
+      JavaScript 7th Edition
+      Chapter 12
+      Project 12-5
+
+      Project to validate a user form
+      Author: Louis Fennell III
+      Date:   4/06/2023
+
+      Filename: project12-05.html
+   -->
+	<!-- Meta element (<meta/>) that uses the backwards compatible charset attribute of "utf-8". -->
+   <meta charset="utf-8" />
+	<!-- Meta element (<meta>) that uses the viewport attribute to set the width of the viewport to
+	the width of the device. -->
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <!-- Title element (<title>) that displays the name of the project at the top of the screen on 
+   the web browser's tab. -->
+   <title>Hands-on Project 12-5</title>
+	<!-- Link element (<link>) that links to the provided stylesheet to display custom formatting of
+   the web page. -->
+   <link rel="stylesheet" href="styles.css" />
+	<!-- Added link to the latest minified jQuery source (3.6.4). The integrity and crossorigin 
+	attributes are used for SRI checking to ensure that resources hosted on third-party servers have 
+	not been tampered with. -->
+	<script
+			  src="https://code.jquery.com/jquery-3.6.4.min.js"
+			  integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
+			  crossorigin="anonymous">
+	</script>
+	<!-- Added link to JavaScript source, project12-03.js, deferred until the page has loaded. -->
+	<script src="project12-05.js" defer></script>
+</head>
+
+<body>
+   <header>
+		<!-- Heading element (<h1>) displays the title of the project at the top of the page,
+      Hands-on Project 12-5. -->
+      <h1>
+         Hands-on Project 12-5
+      </h1>
+   </header>
+
+   <section>
+      <!-- Form element (<form>) that uses the get method to send the form data to the server. The 
+      action attribute is set to formsubmit.html to display the form data on the web page. -->
+      <form id="userform" name="userform" method="get" action="formsubmit.html">
+         <!-- Heading element (<h1>) displays the title of the form, User Form. -->
+         <h1>User Form</h1>
+         
+         <fieldset>
+            <!-- Legend element (<legend>) displays the text Member Information. -->
+            <legend>Member Information</legend>
+            
+            <!-- Label element (<label>) with the for attribute, "username" to associate it with 
+            the following input element. The label displays the text, Username. The associated 
+            input element (<input>), with the name and id set to, "username", uses the required
+            attribute to set the field as required. The span element (<span>) displays an asterisk
+            indicating the field is required. -->
+            <label for="username">Username</label>
+            <input name="username" id="username" required />
+            <span>*</span>
+            
+            <!-- Label element (<label>) with the for attribute, "email" to associate it with 
+            the following input element. The label displays the text, Email Address. The associated
+            input element (<input>), with the name and id set to, "email", uses the required
+            attribute to set the field as required. The span element (<span>) displays an asterisk
+            indicating the field is required. -->
+            <label for="email">Email Address</label>
+            <input name="email" id="email" type="email" required />
+            <span>*</span> 
+            
+            <!-- Label element (<label>) with the for attribute, "pwd" to associate it with
+            the following input element. The label displays the text, Password. The associated
+            input element (<input>), with the name and id set to, "pwd", uses the required
+            attribute to set the field as required. The span element (<span>) displays an asterisk
+            indicating the field is required. -->
+            <label for="pwd">Password</label>
+            <input name="pwd" id="pwd" type="password" required />
+            <span>*</span> 
+            
+            <!-- Label element (<label>) with the for attribute, "pwd2" to associate it with
+            the following input element. The label displays the text, Confirm Password. The
+            associated input element (<input>), with the name and id set to, "pwd2", uses the
+            required attribute to set the field as required. The span element (<span>) displays an
+            asterisk indicating the field is required. -->
+            <label for="pwd2">Confirm Password</label>
+            <input name="pwd2" id="pwd2" type="password" required />
+            <span>*</span>
+            <!-- Div element (<div>) that displays the password requirements. -->
+            <div>Your password must have at least 8 characters <br> with at least 1
+                   uppercase letter, 1 lowercase letter, and 1 number
+            
+            </div>
+         </fieldset>
+         
+         <!-- Input element (<input>) that uses the submit type to display a submit button on the
+         web page. The value attribute is set to Submit to display the text on the button. -->
+         <input id="submitButton" type="submit" value="Submit" />
+      </form>
+   </section>
+</body>
+</html>

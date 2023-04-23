@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <!--
+		Louis Fennell III, April 06, 2023, IST-239-W01, Hands-On Project 12-5
+		
+		This file, formsubmit.html, is one of the two HTML files for the Hands-On Project 12-5. This
+      file, formsubmit.html, displays the contents of the valid user form upon submission.
+			
+      JavaScript 7th Edition
+      Chapter 12
+      Project 12-5
+
+      Page to display the contents of a valid user form
+      Author: Louis Fennell III
+      Date:   4/06/2023
+
+      Filename: formsubmit.html
+   -->
+	<!-- Meta element (<meta/>) that uses the backwards compatible charset attribute of "utf-8". -->
+   <meta charset="utf-8" />
+	<!-- Meta element (<meta>) that uses the viewport attribute to set the width of the viewport to
+	the width of the device. -->
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Title element (<title>) that displays the name of the project at the top of the screen on 
+   the web browser's tab. -->
+   <title>Userform Data</title>
+	<!-- Link element (<link>) that links to the provided stylesheet to display custom formatting of
+   the web page. -->
+   <link rel="stylesheet" href="styles.css" />
+	
+   <script>
+      /* Adds an event listener for the "load" event on the window. When this event is detected, an
+      anonymous function is called to write data to a table. */
+      window.addEventListener("load", function(){   
+         // Retrieve the field/value pairs from the URL
+         /* Declares the variable, formData and assigns it the value of the location.search property
+         of the window object. The location.search property returns the query string of the URL. */
+         var formData = location.search.slice(1);
+         /* Replaces all the "+" characters in the formData variable with a space character. */
+         formData = formData.replace(/\+/g," ");
+         /* Decodes the formData variable and assigns it the value of the decoded formData variable. */
+         formData = decodeURIComponent(formData);
+         /* Declares the variable, formFields and assigns it the value of the formData variable
+         split into an array of strings at the "&" and "=" characters. */
+         let formFields = formData.split(/[&=]/g);
+
+         // Write the field values to data table
+         /* Sets the textContent of the element with the id, "username" to the value of the second
+         element (1) of the formFields array. */
+         document.getElementById("username").textContent = formFields[1];
+         /* Sets the textContent of the element with the id, "email" to the value of the fourth
+         element (3) of the formFields array. */
+         document.getElementById("email").textContent = formFields[3];
+         /* Sets the textContent of the element with the id, "pwd" to the value of the sixth
+         element (5) of the formFields array. */
+         document.getElementById("pwd").textContent = formFields[5];
+         /* Sets the textContent of the element with the id, "pwd2" to the value of the eighth
+         element (7) of the formFields array. */
+         document.getElementById("pwd2").textContent = formFields[7];
+
+      } );   
+   </script>
+</head>
+
+<body>
+   <header>
+      <!-- Heading element (<h1>) displays the title of the project at the top of the page,
+      Hands-on Project 12-5. -->
+      <h1>
+         Hands-on Project 12-5
+      </h1>
+   </header>
+
+   <!-- The section element (<section>) that contains the table element (<table>) that displays the
+   user data. -->
+   <section id="formoutput">
+         <!-- The h1 element (<h1>) that displays the text, User Data. -->
+         <h1>User Data</h1>
+         
+         <!-- The table element (<table>) that contains the id, "usertable", that displays the user 
+         data. -->
+         <table id="usertable">
+            <!-- The tr element (<tr>) that contains the th element (<th>) that displays the text, 
+            Username and a td element (<td>) that contains the id, "username", that displays the
+            user's username. -->
+            <tr>
+               <th>Username</th>
+               <!-- Table data element (<td>) that contains the id, "username", that displays the 
+               user's username. -->
+               <td id="username"></td>
+            </tr>
+            <!-- The tr element (<tr>) that contains the th element (<th>) that displays the text,
+            Email and a td element (<td>) that contains the id, "email", that displays the user's
+            email. -->
+            <tr>
+               <th>Email</th>
+               <!-- Table data element (<td>) that contains the id, "email", that displays the 
+               user's email. -->
+               <td id="email"></td>
+            </tr> 
+            <!-- The tr element (<tr>) that contains the th element (<th>) that displays the text,
+            Password and a td element (<td>) that contains the id, "pwd", that displays the user's
+            password. -->
+            <tr>
+               <th>Password</th>
+               <!-- Table data element (<td>) that contains the id, "pwd", that displays the
+               user's password. -->
+               <td id="pwd"></td>
+            </tr>
+            <!-- The tr element (<tr>) that contains the th element (<th>) that displays the text,
+            Confirm Password and a td element (<td>) that contains the id, "pwd2", that displays
+            the user's confirmed password. -->
+            <tr>
+               <th>Confirm Password</th>
+               <!-- Table data element (<td>) that contains the id, "pwd2", that displays the
+               user's confirmed password. -->
+               <td id="pwd2"></td>
+            </tr>            
+         </table>
+
+   </section>
+</body>
+</html>
