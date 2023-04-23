@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<!-- <head> Head element used to initially format the web page. -->
+<head>
+   <!--
+      Louis Fennell III, February 05, 2023, IST-239-W01, Hands-On Project 5-1
+
+      This document, project05-01.html, is an HTML document that provides the basic functionality
+      of the hands-on project. It includes the title of the project, Hands-On Project 5-1, the 
+      instructions for the user of the completed web page, what the web page is supposed to be, 
+      Algebra I Practice Quiz, along with a timer clock that counts down from 90. There is an 
+      overlay covering the quiz contents and when the user selects the "Start Quiz" button, the
+      overlay will be hidden so that the user can complete the quiz.
+
+      JavaScript 7th Edition
+      Chapter 5
+      Hands-on Project 5-1
+
+      Author: Louis Fennell III
+      Date:   02/05/2023
+
+      Filename: project05-01.html
+   -->
+   <!-- Meta element (<meta/>) that uses the backwards compatible charset attribute of "utf-8". -->
+   <meta charset="utf-8" />
+   <meta name="viewport" content="width=device-width,initial-scale=1.0">
+   <!-- Title element (<title>) that displays the name of the project at the top of the screen on the web browser's tab. -->
+   <title>Hands-on Project 5-1</title>
+   <!-- Link element (<link>) that links to the provided stylesheet to display custom formatting of the web page. -->
+   <link rel="stylesheet" href="styles.css" />
+   <!-- Added link to JavaScript source, deferred to load after completion of the HTML loading. -->
+   <script src="project05-01.js" defer></script>
+</head>
+
+<body>
+   <!-- Opening header (<header>) element that contains the h1 header. -->
+   <header>
+      <!-- Heading element (<h1>) displays the title of the project at the top of the page. -->
+      <h1>
+         Hands-on Project 5-1
+      </h1>
+   </header>
+
+   <!-- Opening article element. <article> -->
+   <article>
+      <!-- h2 element that contains the name of the page, Algebra I Practice Quiz. -->
+      <h2>Algebra I Practice Quiz</h2>
+      
+      <!-- Div element <div> with the id, "container". This element contains two separate div elements,
+         one containing the quiz instructions, the other containing the quiz itself. -->
+      <div id="container">
+         <!-- <div> Div element with the id, "instructions". This div element contains a 
+            <p> paragraph element that contains the instructions for the user on how to operate
+            the webpage. -->
+         <div id="instructions">
+            <!-- Instructions on how to use the web page for the user visiting. -->
+            <p>Click the <strong>Start Quiz</strong> button below
+               to start the quiz and begin the countdown. Upon completion, incorrect answers
+               will be marked in red. Retake the quiz as many times as you wish.
+            </p>
+            <!-- <input> Input element with the id, "startquiz" containing the value, "Start Quiz". 
+            This element will be the button that the user clicks initially to start the "quizclock"
+            counting down and simultaneously removing the "overlay" that hides the quiz questions. -->
+            <input id="startquiz" value="Start Quiz" />
+            <!-- <input> Input element with the id, "quizclock". This element will be used to 
+               display the timer counting down from initially 20 and then finally 90. -->
+            <input id="quizclock"  />
+         </div>
+
+         <!-- <div> div element that is used to store the entirety of the quiz elements, the table
+            storing the questions and the input fields for their answers. -->
+         <div id="quiz">
+            <table>
+               <!-- <tr> First table row containing the first question, 5 + 2x = 25, and the answer 
+                  field, with text showing, x = , then an input field for the answer. -->
+               <tr>
+                  <!-- <td> Table cell 1 of the first row that displays the number of the question, 1) 
+                     and then the  number of the question, 5) 
+                     and then the  question, 5 + 2x = 25. -->
+                  <td>1)&nbsp;&nbsp;&nbsp; 5 + 2<em>x</em> = 25</td>
+                  <!-- <td> Table cell 2 of the first row that displays the answer field, x = . 
+                     The answer field uses a default input element, a textbox, with the ID "question1" -->
+                  <td><em>x</em> = <input id="question1" /></td>
+               <!-- </tr> Closing element for the table row. -->
+               </tr>
+               <tr>
+                  <!-- <td> Table cell 1 of the second row that displays the number of the question, 2) 
+                     and then the  question, 30 - 5x = 10. -->
+                  <td>2)&nbsp;&nbsp;&nbsp; 30 &ndash; 5<em>x</em> = 10</td>
+                  <!-- <td> Table cell 2 of the second row that displays the answer field, x = . 
+                     The answer field uses a default input element, a textbox, with the ID "question2" -->
+                  <td><em>x</em> = <input id="question2" /></td>
+               <!-- </tr> Closing element for the table row. -->
+               </tr>
+               <tr>
+                  <!-- <td> Table cell 1 of the third row that displays the number of the question, 3) 
+                     and then the  question, 6 + 3x = -12. -->
+                  <td>3)&nbsp;&nbsp;&nbsp; 6 + 3<em>x</em> = &ndash;12</td>
+                  <!-- <td> Table cell 2 of the third row that displays the answer field, x = . 
+                     The answer field uses a default input element, a textbox, with the ID "question3" -->
+                  <td><em>x</em> = <input id="question3" /></td>
+               <!-- </tr> Closing element for the table row. -->
+               </tr>
+               <tr>
+                  <!-- <td> Table cell 1 of the fourth row that displays the number of the question, 4) 
+                     and then the  question, 44 - 12x = -16. -->
+                  <td>4)&nbsp;&nbsp;&nbsp; 44 &ndash; 12<em>x</em> = &ndash;16</td>
+                  <!-- <td> Table cell 2 of the fourth row that displays the answer field, x = . 
+                     The answer field uses a default input element, a textbox, with the ID "question4" -->
+                  <td><em>x</em> = <input id="question4" /></td>
+               <!-- </tr> Closing element for the table row. -->
+               </tr>
+               <tr>
+                  <!-- <td> Table cell 1 of the fifth row that displays the number of the question, 5) 
+                     and then the question, 48 + 6x = 6. -->
+                  <td>5)&nbsp;&nbsp;&nbsp; 48 + 6<em>x</em> = 6</td>
+                  <!-- <td> Table cell 2 of the fifth row that displays the answer field, x = . 
+                     The answer field uses a default input element, a textbox, with the ID "question5" -->
+                  <td><em>x</em> = <input id="question5" /></td>
+               <!-- </tr> Closing element for the table row. -->
+               </tr>
+            <!-- </table> Closing element for the entire table. -->
+            </table>
+         <!-- </div> Div closing element. This closing tag closes the div section that contains 
+            the quiz table. -->
+         </div>
+
+         <!-- <div> Div element containing the "overlay" element-->
+         <div id="overlay" class="hidequiz"></div>
+      </div>
+   <!-- </article> -->
+   </article>
+
+<!-- Closing body (</body>) element. -->
+</body>
+<!-- Closing HTML (</html>) element. Everything enclosed from <html> to </html> contains the web pages entire contents. -->
+</html>
