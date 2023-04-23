@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--
+        Louis Fennell III, February 26, 2023, IST-239-W01, Hands-On Project 8-3
+
+        This file, project08-03.html, is the HTML file for the Hands-on Project 8-3. This project 
+        is a pizza ordering application that allows the user to select a pizza size, crust type, 
+        toppings and add the pizza build to their cart. The HTML web
+
+        JavaScript 7th Edition
+        Chapter 8
+        Hands-on Project 8-3
+
+        Author: Louis Fennell III
+        Date:   02/26/2023
+
+        Filename: project08-03.html
+    -->
+    <!-- Meta element (<meta/>) that uses the backwards compatible charset attribute of "utf-8". -->
+    <meta charset="utf-8" />
+    <!-- Meta element (<meta/>) that uses the viewport attribute to set the width of the viewport to the width of the device. -->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!-- Title element (<title>) that displays the name of the project at the top of the screen on the web browser's tab. -->
+    <title>Hands-on Project 8-3</title>
+    <!-- Link element (<link>) that links to the provided stylesheet to display custom formatting of the web page. -->
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Added link to JavaScript source, deferred to load after completion of the HTML loading. -->
+    <script src="project08-03.js" defer></script>
+</head>
+
+<body>
+    <!-- Header element (<header>) that displays the title of the project at the top of the page. -->
+    <header>
+        <!-- Heading element (<h1>) displays the title of the project at the top of the page, 
+        Hands-on Project 8-3. -->
+        <h1>
+            Hands-on Project 8-3
+        </h1>
+    </header>
+
+    <section>
+        <!-- Heading element (<h2>) displays the title of the section, Build a Pizza. -->
+        <h1>Build a Pizza</h1>
+
+        <fieldset id="pizzaOptions">
+            <label id="sizeLabel" for="pizzaSize">Size (in.)</label>
+            <select id="pizzaSize" name="pizzaSize">
+                <option value='12"'>12"</option>
+                <option value='14"' selected>14"</option> 
+                <option value='16"'>16"</option>                                
+            </select>         
+            <label for="crustBox">Pizza Crust</label>
+            <select name="pizzaCrust" id="pizzaCrust">
+                <option value="thin" selected>thin</option>
+                <option value="thick">thick</option>
+                <option value="stuffed">stuffed</option>
+                <option value="pan">pan</option>
+            </select>         
+        </fieldset>
+        
+        <fieldset id="toppings">
+            <div>
+                <label>Toppings ($1.50 ea.)</label>
+                <img src="full.png" alt="full" />
+                <img src="left.png" alt="left" />
+                <img src="right.png" alt="right" />
+                <img src="none.png" alt="none" />
+            </div>
+            <div>
+                <label>Pepperoni</label>
+                <input class="topping" type="radio" name="pepperoni" value="full" />
+                <input class="topping" type="radio" name="pepperoni" value="left" />
+                <input class="topping" type="radio" name="pepperoni" value="right" />
+                <input class="topping" type="radio" name="pepperoni" value="none" checked />
+            </div>
+            <div>
+                <label>Ham</label>
+                <input class="topping" type="radio" name="ham" value="full" />
+                <input class="topping" type="radio" name="ham" value="left" />
+                <input class="topping" type="radio" name="ham" value="right" />
+                <input class="topping" type="radio" name="ham" value="none" checked />
+            </div>
+            <div>
+                <label>Sausage</label>
+                <input class="topping" type="radio" name="sausage" value="full" />
+                <input class="topping" type="radio" name="sausage" value="left" />
+                <input class="topping" type="radio" name="sausage" value="right" />
+                <input class="topping" type="radio" name="sausage" value="none" checked />
+            </div>
+            <div>
+                <label>Chicken</label>
+                <input class="topping" type="radio" name="chicken" value="full" />
+                <input class="topping" type="radio" name="chicken" value="left" />
+                <input class="topping" type="radio" name="chicken" value="right" />
+                <input class="topping" type="radio" name="chicken" value="none" checked />
+            </div>
+            <div>
+                <label>Mushrooms</label>
+                <input class="topping" type="radio" name="mushroom" value="full" />
+                <input class="topping" type="radio" name="mushroom" value="left" />
+                <input class="topping" type="radio" name="mushroom" value="right" />
+                <input class="topping" type="radio" name="mushroom" value="none" checked />
+            </div>
+            <div>
+                <label>Green Peppers</label>
+                <input class="topping" type="radio" name="greenpepper" value="full" />
+                <input class="topping" type="radio" name="greenpepper" value="left" />
+                <input class="topping" type="radio" name="greenpepper" value="right" />
+                <input class="topping" type="radio" name="greenpepper" value="none" checked />
+            </div>
+            <div>
+                <label>Onions</label>
+                <input class="topping" type="radio" name="onion" value="full" />
+                <input class="topping" type="radio" name="onion" value="left" />
+                <input class="topping" type="radio" name="onion" value="right" />
+                <input class="topping" type="radio" name="onion" value="none" checked />
+            </div>
+            <div>
+                <label>Tomatoes</label>
+                <input class="topping" type="radio" name="tomato" value="full" />
+                <input class="topping" type="radio" name="tomato" value="left" />
+                <input class="topping" type="radio" name="tomato" value="right" />
+                <input class="topping" type="radio" name="tomato" value="none" checked />
+            </div>
+            <div>
+                <label>Jalapenos</label>
+                <input class="topping" type="radio" name="jalapeno" value="full" />
+                <input class="topping" type="radio" name="jalapeno" value="left" />
+                <input class="topping" type="radio" name="jalapeno" value="right" />
+                <input class="topping" type="radio" name="jalapeno" value="none" checked />
+            </div>
+        </fieldset>   
+        
+        <div id="previewBox"></div>
+        <input type="button" value = "ADD TO CART" id="addToCart" />
+        <aside>
+            <h1>Items in Cart</h1>
+            <div id="cart"></div>
+        </aside>
+
+    </section>
+</body>
+</html>
