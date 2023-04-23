@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <!--
+		Louis Fennell III, March 20, 2023, IST-239-W01, Hands-On Project 11-1
+		
+		This file, project11-01.html, is the HTML file for the Hands-On Project 11-1. This website is 
+		a very simple website intended to display the Astronomy Picture of the Day (APOD) from an API
+		called from the NASA website. The user will select the date of the image that they want to 
+		display. The code that is used to call the API and display the image is contained within the
+		project11-01.js file.
+		
+      JavaScript 7th Edition
+      Chapter 11
+      Hands-on Project 11-1
+
+      Author: Louis Fennell III
+      Date:   3/20/2023
+
+      Filename: project11-01.html
+   -->
+	<!-- Meta element (<meta/>) that uses the backwards compatible charset attribute of "utf-8". -->
+   <meta charset="utf-8" />
+	<!-- Meta element (<meta/>) that uses the viewport attribute to set the width of the viewport to
+	the width of the device. -->
+   <meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<!-- Title element (<title>) that displays the name of the project at the top of the screen on 
+   the web browser's tab. -->
+   <title>Hands-on Project 11-1</title>
+	<!-- Link element (<link>) that links to the provided stylesheet to display custom formatting of
+   the web page. -->
+   <link rel="stylesheet" href="styles.css" />
+	<!-- Added link to JavaScript source, project10-3.js, deferred until the page has loaded. -->
+	<script src="project11-01.js" defer></script>
+</head>
+
+<body>
+   <header>
+		<!-- Heading element (<h1>) displays the title of the project at the top of the page,
+      Hands-on Project 11-1. -->
+      <h1>
+         Hands-on Project 11-1
+      </h1>
+   </header>
+
+   <section>
+		<!-- Heading element (<h1>) that displays the title of the web page, 
+		Astronomy Picture of the Day -->
+      <h1>Astronomy Picture of the Day</h1>
+		<!-- Div element (<div>) that contains the id, "dateContainer". -->
+      <div id="dateContainer">
+			<!-- Label element (<label>) that contains the plain text, Picture Date. -->
+         <label for="photoDate">Picture Date</label>
+         <!-- Input element (<input>) with the id, "dateBox", and the type selector attribute, 
+			"date". This element will contain the date that is used to call the 
+			"Astronomy Picture of the Day" from a NASA API. -->
+			<input type="date" id="dateBox" /><br />
+         <!-- Div element (<div>) that contains the id, "nasaImage" with the alt text attribute
+			set to a blank string. This div element will be used to display the picture (APOD) from 
+			the NASA API. -->
+			<div id="nasaImage" alt=""></div>
+      </div>
+
+</section>
+</body>
+</html>
