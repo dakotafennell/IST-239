@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!--
+		Louis Fennell III, March 20, 2023, IST-239-W01, Hands-On Project 11-3
+		
+		This file, project11-03.html is the main webpage for the Hands-On Project 11-5. This project
+      is a sample review website of various science fiction books. The website will contain a
+      selection list of authors and a list of podcasts. The user will be able to select an author
+      from the selection list and the webpage will display the author's name, the title of the
+      book, a short synopsis of the book, the book's star rating, and a review of the book.
+		
+      JavaScript 7th Edition
+      Chapter 11
+      Hands-on Project 11-5
+
+      Author: Louis Fennell III
+      Date:   3/28/2023
+
+      Filename: project11-05.html
+   -->
+    <!-- Meta element (<meta/>) that uses the backwards compatible charset attribute of "utf-8". -->
+    <meta charset="utf-8" />
+    <!-- Meta element (<meta/>) that uses the viewport attribute to set the width of the viewport to
+	the width of the device. -->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <!-- Title element (<title>) that displays the name of the project at the top of the screen on 
+   the web browser's tab. -->
+    <title>Hands-on Project 11-5</title>
+    <!-- Link element (<link>) that links to the provided stylesheet to display custom formatting of
+   the web page. -->
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Added link to JavaScript source, project10-3.js, deferred until the page has loaded. -->
+    <script src="project11-05.js" defer></script>
+  </head>
+
+  <body>
+    <header>
+      <!-- Header element (<h1>) displays the title of the project at the top of the page,
+      Hands-on Project 11-5. -->
+      <h1>Hands-on Project 11-5</h1>
+    </header>
+
+    <section>
+      <header>
+        <!-- Heading element (<h1>) that displays the title of the web page, Welcome to the SF Control Room. -->
+        <h1>Welcome to the SF Control Room</h1>
+        <!-- Paragraph element (<p>) that displays the SF Control Room blog's information blurb. -->
+        <p>
+          I started this blog in order to share my latest fiction with my
+          readers and to post reviews and comments on the world of Science
+          Fiction and Fantasy. From time to time, we'll have interviews with
+          other great authors in the Sci-Fi and Fantasy markets as well as give
+          you the inside scoop on upcoming conventions.
+        </p>
+      </header>
+      <!-- Div element (<div>) that contains the id, "reviewarchives". This div element contains 
+		the archived reviews by book author. The names are contained in a selection list that will
+		contain the 10 different authors names. -->
+      <div id="reviewarchives">
+        <!-- Header element (<h1>) that contains the title of the following selection 
+			list ("authorList"). -->
+        <h1>Archived Reviews by Author</h1>
+        <!-- Selection element (<select>) with the id, "authorList" and set to display 10 items. -->
+        <select id="authorList" size="10"></select>
+      </div>
+
+      <!-- Aside element (<aside>) with the id, "podcastList". This element will contain the list
+		of each podcast,  Control Room #1-4. -->
+      <aside id="podcastList"></aside>
+
+      <!-- Article element (<article>) with the id, "review" that will contain the main body of the
+		author review (title, author name, short story synopsis, star rating, and review text). -->
+      <article id="review">
+        <header>
+          <!-- Header elements (<h1> and <h2>) that contain the title of the novel and the name 
+				of the author respectively. -->
+          <h1>The Star Tunnel</h1>
+          <h2>by Kei Yang</h2>
+        </header>
+
+        <!-- Paragraph element (<p>) containing the short, story synopsis. -->
+        <p>
+          In Short: An engrossing novel of philosophy and hard science. Highly
+          Recommended.
+        </p>
+        <!-- Paragraph element (<p>) containing the novels star rating -->
+        <p>3 Stars</p>
+
+        <!-- Paragraph element (<p>) that will contain the first paragraph of the review. -->
+        <p>
+          In her latest science-fiction novel, Yang explores the idea of quantum
+          tunneling and a machine built to instantly transport the rider to the
+          end of the universe. Teleportation is an old sci-fi concept and one
+          that I thought had been wrung dry. Yang has proven me wrong.
+          Reminiscent of the best of Niven's teleportation series stories from
+          the 70's, Yang is concerned, not so much with the technology of
+          teleportation, as much as its effect on society, morals, and religion.
+        </p>
+
+        <!-- Paragraph element (<p>) that will contain the second paragraph of the review. -->
+        <p>
+          To be sure, this is not just philosophical track masquerading as a SF
+          novel (though Yang's always-fascinating philosophical ruminations are
+          here in abundance). Fans of hard-hitting action-packed SF will have
+          plenty to entertain them and Yang pulls several rabbits out of her hat
+          to surprise any reader. I thought I knew all of the tricks of the
+          trade and Yang's denouement surprised even me.
+        </p>
+
+        <!-- Paragraph element (<p>) that will contain the third paragraph of the review. -->
+        <p>
+          My only complaint is that the novel begins slowly with a bit too much
+          emphasis on the technobabble associated with teleportation. Why do
+          some authors insist on turning whole chapters into a physics thesis?
+          However don't skip the second chapter or else you'll miss a hilarious
+          misadventure involving two teleportation devices and a rather annoying
+          cat.
+        </p>
+
+        <!-- Paragraph element (<p>) that will contain the fourth paragraph of the review. -->
+        <p>
+          Yang is the proud owner of both the Hugo and Nebula award for her
+          novel, <em>Picasso's Timepiece</em>. Is a second Hugo/Nebula award
+          sweep in the offing? It's still early, but Yang's latest work has to
+          be considered a strong contender.
+        </p>
+      </article>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,94 @@
+<?xml version = "1.0" encoding = "UTF-8" ?>
+
+<!--
+    JavaScript 7th Edition
+    Chapter 11
+    Hands-on Project 11-5
+
+    Filename: sfpod.xml
+-->
+<!-- 
+    This is the RSS 2.0 feed for the Sci-Fi Control Room Podcast.
+    The feed is available at http://www.sfcontrolroom.com/sfpod.xml
+-->
+<rss version="2.0">
+
+    <!--
+        The channel element contains information about the podcast.
+        The title, description, and link elements are required.
+     -->
+    <channel>
+        <!-- The title element contains the title of the podcast. -->
+        <title>The Sci-Fi Control Room Podcast</title>
+        <!-- The description element contains a description of the podcast. -->
+        <description>Hugo and Nebula award-winning science fiction author Kevin Vinter
+                     talks about the world of science fiction in the podcast. Join
+                     Kevin twice-a-month for interviews, book reviews, and readings
+                     from science fiction classics.
+        </description>
+        <!-- The link element contains the URL of the podcast. -->
+        <link>http://www.sfcontrolroom.com/podcast.html</link>
+        <!-- The language element contains the language of the podcast. -->
+        <language>en</language>
+
+        <item>
+            <!-- The title element contains the title of the podcast episode. -->
+            <title>Control Room #4</title>
+            <!-- The description element contains a description of the podcast. -->
+            <description>Kevin looks at science fiction in the digital
+                         age and the impact on online media on science
+                         fiction magazines and fanzines. Kevin will also
+                         read the first half of his new novelette,
+                         Null Gateway.
+            </description>
+            <!-- The link element contains the URL of the podcast. -->
+            <link>http://www.sfcontrolroom.com/podcast.html#sfcr04</link>
+            <!-- The pubDate element contains the date the podcast was published. -->
+            <pubDate>Sun, 25 Oct 2024 18:39:14 -0800</pubDate>
+        </item>
+
+        <item>
+            <!-- The title element contains the title of the podcast episode. -->
+            <title>Control Room #3</title>
+            <!-- The description element contains a description of the podcast. -->
+            <description>Kevin discusses the early days of the pulps with
+                         science fiction historian, critic, and author,
+                         Fredric Ogletree.
+            </description>
+            <!-- The link element contains the URL of the podcast. -->
+            <link>http://www.sfcontrolroom.com/podcast.html#sfcr03</link>
+            <pubDate>Sun, 11 Oct 2024 11:21:33 -0800</pubDate>
+        </item>
+
+        <item>
+            <!-- The title element contains the title of the podcast episode. -->
+            <title>Control Room #2</title>
+            <!-- The description element contains a description of the podcast. -->
+            <description>Kevin reads an excerpt from his new novelette, The Wages of Sin,
+                         and a science essay, I am an Emergent Phenomenom. Kevin
+                         will also review the latests novel by K.D. Wilson and the
+                         new sf movie, Blaster Force (it stinks).
+            </description>
+            <!-- The link element contains the URL of the podcast. -->
+            <link>http://www.sfcontrolroom.com/podcast.html#sfcr02</link>
+            <pubDate>Sun, 04 Oct 2024 15:44:02 -0800</pubDate>
+        </item>
+
+        <item>
+            <!-- The title element contains the title of the podcast episode. -->
+            <title>Control Room #1</title>
+            <!-- The description element contains a description of the podcast. -->
+            <description>Kevin Vinter introduces a new podcast with a packed program
+                         of readings and interviews from the world of science fiction.
+                         Kevin reads an extended excerpt from his Hugo awarding-winning
+                         novel, The Long Sleep and provides backstory on the writing
+                         of this sf classic.
+            </description>
+            <!-- The link element contains the URL of the podcast. -->
+            <link>http://www.sfcontrolroom.com/podcast.html#sfcr01</link>
+            <pubDate>Sun, 27 Sep 2024 15:11:01 -0800</pubDate>
+        </item>
+
+    </channel>
+
+</rss>
