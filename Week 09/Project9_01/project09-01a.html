@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <!--
+      Louis Fennell III, March 6, 2023, IST-239-W01, Hands-On Project 9-1
+
+      This file, project09-01a.html, is the main HTML file for the Hands-On Project 9-1. This page
+      contains the personal greeting form that, when completed and submitted, will redirect the 
+      user to the HTML file, project09-01b.html.
+
+      JavaScript 7th Edition
+      Chapter 9
+      Hands-on Project 9-1
+
+      Author: 
+      Date:   
+
+      Filename: project09-01a.html
+   -->
+   <!-- Meta element (<meta/>) that uses the backwards compatible charset attribute of "utf-8". -->
+   <meta charset="utf-8" />
+   <!-- Meta element (<meta/>) that uses the viewport attribute to set the width of the viewport to the width of the device. -->
+   <meta name="viewport" content="width=device-width,initial-scale=1.0">
+   <!-- Title element (<title>) that displays the name of the project at the top of the screen on the web browser's tab. -->
+   <title>Hands-on Project 9-1</title>
+   <!-- Link element (<link>) that links to the provided stylesheet to display custom formatting of the web page. -->
+   <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+   <header>
+      <!-- Heading element (<h1>) displays the title of the project at the top of the page, 
+      Hands-on Project 9-1. -->
+      <h1>
+         Hands-on Project 9-1
+      </h1>
+   </header>
+
+   <section>
+      <!-- Heading element (<h1>) displays the title of the section, Personal Greeting. -->
+      <h1>Personal Greeting</h1>
+      <!-- Form element (<form>) that contains the input fields for the user to enter their
+      personal greeting. This element was modified from its initial value of <form> to add the 
+      method and action attributes top redirect the user to the next webpage, project09-01b.html,
+      when the submit button is pressed. -->
+      <form method="get" action="project09-01b.html">
+      <fieldset>
+         <!-- Legend element (<legend>) displays the title of the fieldset, Enter your personal 
+         greeting. -->
+         <legend>Enter your personal greeting</legend>
+         <!-- Label element (<label>) that displays the name of the following <input> element, 
+         "To:" (id="to"). -->
+         <label for="to">To:</label>
+         <!-- Input element (<input>) that allows the user to enter who greeting is to. This 
+         input element is a text box. -->
+         <input name="to" id="to" type="text" />
+         <!-- Label element (<label>) that displays the name of the following <input> element, 
+         "From:" (id="from"). -->
+         <label for="from">From:</label>
+         <!-- Input element (<input>) that allows the user to enter who greeting is from. This 
+         input element is a text box. -->
+         <input name="from" id="from" type="text" />
+         <!-- Label element (<label>) that displays the name of the following <textarea> element,
+         "Message:" (id="msg"). -->
+         <label for="msg">Message:</label>
+         <!-- Textarea element (<textarea>) that the user will type their greeting message into. -->
+         <textarea name="msg" id="msg"></textarea>
+      </fieldset>
+         
+      <!-- Input element (<input>), that is a submit button that, when clicked, will redirect the 
+      user to the, project09-01b.html, webpage. -->
+      <input id="subButton" type="submit" value="SUBMIT" />
+      </form>
+   </section>
+</body>
+</html>

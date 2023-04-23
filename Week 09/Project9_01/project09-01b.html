@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <!--
+      Louis Fennell III, March 6, 2023, IST-239-W01, Hands-On Project 9-1
+
+      This file, project09-01b.html, is the second web page for the Hands-On Project 9-1. This page
+      contains a shopping cart that will display the message entered by the user on the previous 
+      page, project09-01a.html, inside of a table element (<table>) with the id, "greeting". The page
+      will also display the total cost of the shopping cart in a separate table element with the 
+      id, "order".
+
+      JavaScript 7th Edition
+      Chapter 8
+      Hands-on Project 9-1
+
+      Author: 
+      Date:   
+
+      Filename: project09-01.html
+   -->
+   <!-- Meta element (<meta/>) that uses the backwards compatible charset attribute of "utf-8". -->
+   <meta charset="utf-8" />
+   <!-- Meta element (<meta/>) that uses the viewport attribute to set the width of the viewport to the width of the device. -->
+   <meta name="viewport" content="width=device-width,initial-scale=1.0">
+   <!-- Title element (<title>) that displays the name of the project at the top of the screen on the web browser's tab. -->
+   <title>Hands-on Project 9-1</title>
+   <!-- Link element (<link>) that links to the provided stylesheet to display custom formatting of the web page. -->
+   <link rel="stylesheet" href="styles.css" />
+   <!-- Added link to JavaScript source, deferred to load after completion of the HTML loading. -->
+   <script src="project09-01b.js" defer></script>
+</head>
+
+<body>
+   <header>
+      <!-- Heading element (<h1>) displays the title of the project at the top of the page,
+      Hands-on Project 9-1. -->
+      <h1>
+         Hands-on Project 9-1
+      </h1>
+   </header>
+
+   <section>
+      <!-- Heading element (<h1>) displays the title of the section, Personal Greeting. -->
+      <h1>Shopping Cart</h1>
+      <!-- Opening table element (<table>) with the table id, "greeting", that will display hte
+      information the user typed into the, project09-01a.html, file. -->
+      <table id="greeting">
+      <!-- Caption element (<caption>) displays the title of the table, Greeting Message. -->
+      <caption>Greeting Message</caption>
+      <!-- Table row element (<tr>) that is the first table row containing two cell elements 
+      (<th> and <th>) that displays the text, "To:" in the <th> cell, followed by the information 
+      entered by the user into the "to" text input (<input>) element in the, project09-01a.html, 
+      file, in the <td> cell. -->
+      <tr>
+         <th>To:</th>
+         <td id="to"></td>
+      </tr>
+      <!-- Table row element (<tr>) that is the first table row containing two cell elements 
+      (<th> and <th>) that displays the text, "From:" in the <th> cell, followed by the information
+      entered by the user into the "from" text input (<input>) element in the, project09-01a.html, 
+      file, in the <td> cell. -->
+      <tr>
+         <th>From:</th>
+         <td id="from"></td>
+      </tr> 
+      <!-- Table row element (<tr>) that is the first table row containing two cell elements 
+      (<th> and <th>) that displays the text, "Message:" in the <th> cell, followed by the 
+      information entered by the user into the "msg" textarea (<textarea>) element in the, 
+      project09-01a.html, file, in the <td> cell. -->
+      <tr>
+         <th>Message:</th>
+         <td id="msg"></td>
+      </tr>           
+      </table>
+      
+      <!-- Opening table element (<table>) with the id, "order", which will contain the users order
+      details. -->
+      <table id="order">
+         <thead>
+            <!-- Table row element, (<tr>), containing three header cells, displaying the text, in 
+            each cell, Product, Qty, and Cost. -->
+            <tr>
+               <th>Product</th>
+               <th>Qty</th>
+               <th>Cost</th>
+            </tr>
+         </thead>
+         <tbody>
+            <!-- Table row element, (<tr>), containing three data cells, displaying the 
+            information, in each cell, of the item, its quantity, and the price (in US dollars $). -->
+            <tr>
+               <td>Classic Pears, Apples, and Cheese Box ($49.95)</td>
+               <td>1</td>
+               <td>$49.95</td>
+            </tr>
+            <!-- Table row element, (<tr>), containing three data cells, displaying the 
+            information, in each cell, of the item, its quantity, and the price (in US dollars $). -->
+            <tr>
+               <td>Signature Chocolate Truffles ($29.95)</td>
+               <td>2</td>
+               <td>$59.90</td>
+            </tr>            
+         </tbody>
+         <!-- Table footer element (<tfoot>), that contains three data cells, one empty cell,
+         one containing the text, TOTAL, and the last one containing the cost of the order, $109.85. -->
+         <tfoot>
+            <td></td>
+            <td>TOTAL</td>
+            <td>$109.85</td>
+         </tfoot>
+      </table>
+   </section>
+</body>
+</html>
