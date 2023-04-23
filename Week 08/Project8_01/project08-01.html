@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--
+        Louis Fennell III, February 26, 2023, IST-239-W01, Hands-On Project 8-1
+        
+        This file, project08-01.html, is the HTML file for the Hands-on Project 8-1. This file is 
+        connected to the project08-01.js
+
+        JavaScript 7th Edition
+        Chapter 8
+        Hands-on Project 8-1
+
+        Author: Louis Fennell III
+        Date:   02/26/2023
+
+        Filename: project08-01.html
+    -->
+    <!-- Meta element (<meta/>) that uses the backwards compatible charset attribute of "utf-8". -->
+    <meta charset="utf-8" />
+    <!-- Meta element (<meta/>) that uses the viewport attribute to set the width of the viewport to the width of the device. -->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!-- Title element (<title>) that displays the name of the project at the top of the screen on the web browser's tab. -->
+    <title>Hands-on Project 8-1</title>
+    <!-- Link element (<link>) that links to the provided stylesheet to display custom formatting of the web page. -->
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Added link to JavaScript source, deferred to load after completion of the HTML loading. -->
+    <script src="project08-01.js" defer></script>
+</head>
+
+<body>
+    <!-- Header element (<header>) that displays the title of the project at the top of the page. -->
+    <header>
+        <!-- Heading element (<h1>) displays the title of the project at the top of the page, 
+        Hands-on Project 8-1. -->
+        <h1>
+            Hands-on Project 8-1
+        </h1>
+    </header>
+
+    <section>
+        <!-- Heading element (<h1>) displays the title of the section, Timer. -->
+        <h1>Timer</h1>
+        <!-- Div element (<div>) with the id, "timerClock", that will contain the timer clock. -->
+        <div id="timerClock">
+            <!-- Input element with the id, "minutesBox". This element will be a box that the user can
+            press the up or down arrows in to change the amount of the timers minutes. -->
+            <input id="minutesBox" type="number" value="1" min="0" max="10" step="1" />
+            <span id="separator">:</span>
+            <!-- Input element with the id, "secondsBox". This element will be a box that the user can
+            press the up or down arrows in to change the amount of the timers seconds. (minimum: 0,
+            maximum: 59). -->
+            <input id="secondsBox" type="number" value="15" min="0" max="59" step="1" /><br />
+            <span id="minLabel">minutes</span> <span id="secLabel">seconds</span>
+            <!-- Input element with the id, "runPauseButton". This element will be a button that the user
+            can press to start the timer. -->
+            <input id="runPauseButton" type="button" value="RUN / PAUSE" />
+        </div>
+    </section>
+</body>
+</html>
