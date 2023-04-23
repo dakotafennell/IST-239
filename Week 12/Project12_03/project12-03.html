@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <!--
+      Louis Fennell III, April 06, 2023, IST-239-W01, Hands-On Project 12-3
+		
+		This file, project12-03.html, is the HTML file for the Hands-On Project 12-3. This project
+      is a simple web page that displays the recipe for an Apple Bavarian Torte. The recipe and
+      directions are displayed in two hidden sections with a plus sign (+) next to the title of the
+      section. When the user clicks on that sections title, the section expands to display the
+      content. When the user clicks on the title again, the section contracts and hides the content.
+
+      JavaScript 7th Edition
+      Chapter 12
+      Project 12-3
+
+      Project to show a recipe with expanding/contracting content
+      Author: Louis Fennell III
+      Date:   4/06/2023
+
+      Filename: project12-03.html
+   -->
+	<!-- Meta element (<meta/>) that uses the backwards compatible charset attribute of "utf-8". -->
+   <meta charset="utf-8" />
+	<!-- Meta element (<meta>) that uses the viewport attribute to set the width of the viewport to
+	the width of the device. -->
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <!-- Title element (<title>) that displays the name of the project at the top of the screen on 
+   the web browser's tab. -->
+   <title>Hands-on Project 12-3</title>
+	<!-- Link element (<link>) that links to the provided stylesheet to display custom formatting of
+   the web page. -->
+   <link rel="stylesheet" href="styles.css" /> 
+	<!-- Added link to the latest minified jQuery source (3.6.4). The integrity and crossorigin 
+	attributes are used for SRI checking to ensure that resources hosted on third-party servers have 
+	not been tampered with. -->
+	<script
+			  src="https://code.jquery.com/jquery-3.6.4.min.js"
+			  integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
+			  crossorigin="anonymous">
+	</script>
+	<!-- Added link to JavaScript source, project12-03.js, deferred until the page has loaded. -->
+	<script src="project12-03.js" defer></script>
+</head>
+
+<body>
+   <header>
+		<!-- Heading element (<h1>) displays the title of the project at the top of the page,
+      Hands-on Project 12-3. -->
+      <h1>
+         Hands-on Project 12-3
+      </h1>
+   </header>
+
+   <section>
+      <header>
+         <!-- Image element (<img>) displays the Save Your Fork logo. -->
+         <img src="logo.png" alt="Save your Fork" />
+      </header>
+      <article>
+         <!-- Heading element (<h1>) displays the name of the recipe, Apple Bavarian Torte. -->
+         <h1>Apple Bavarian Torte 
+            <!-- Image elements (<img>) display the star images (3.5 stars). -->
+            <img src="star.png" alt="3 1/2 stars" /> 
+            <img src="star.png" alt="" /> 
+            <img src="star.png" alt="" /> 
+            <img src="halfstar.png" alt="" />
+         </h1>
+         <!-- Image element (<img>) with the id, "dishimg", that displays an image of an Apple 
+         Bavarian Torte. -->
+         <img id="dishimg" src="torte.png" alt="Torte image" />
+         <!-- Paragraph element (<p>) that displays the description of the apple torte. -->
+         <p>A classic European torte baked in a springform pan. Cream cheese, 
+            sliced almonds, and apples make this the perfect holiday treat 
+            (12 servings).</p>
+
+         <!-- Heading element (<h2>) with a nested image element (<img>) that displays the plus image
+         and the text, "Ingredients". When the text, "Ingredients" is clicked on by the user, the
+         JavaScript code will display the hidden ul element with the ingredients. The image element
+         will also change sources to a minus image. -->
+         <h2><img src="plus.png" alt="plus" />Ingredients</h2>
+         <!-- Initially hidden unordered list element (<ul>) that displays the ingredients for making
+         the apple torte. Each ingredient is displayed using list elements (<li>). -->
+         <ul>
+            <li>1/2 cup butter</li>
+            <li>1/3 cup white sugar</li>
+            <li>1/4 teaspoon vanilla extract</li>
+            <li>1 cup all-purpose flour</li>
+            <li>1 (8 ounce) package cream cheese</li>
+            <li>1/4 cup white sugar</li>
+            <li>1 egg</li>
+            <li>1/2 teaspoon vanilla extract</li>
+            <li>6 apples - peeled, cored, and sliced</li>
+            <li>1/3 cup white sugar</li>
+            <li>1/2 teaspoon ground cinnamon</li>
+            <li>1/4 cup sliced almonds</li>
+         </ul>
+         <!-- Heading element (<h2>) with a nested image element (<img>) that displays the plus image
+         and the text, "Directions". When the text, "Directions" is clicked on by the user, the
+         JavaScript code will display the hidden ol element with the directions. The image element
+         will also change sources to a minus image. -->
+         <h2><img src="plus.png" alt="plus" />Directions</h2>
+         <!-- Initially hidden ordered list element (<ol>) that displays the directions for making 
+         the apple torte. Each direction is displayed using list elements (<li>). -->
+         <ol>
+            <li>Preheat oven to 450&deg; F (230&deg; C).</li>
+            <li>Cream together butter, sugar, vanilla, and flour.</li>
+            <li>Press crust mixture into the flat bottom of a 9-inch springform pan. 
+               Set aside.</li>
+            <li>In a medium bowl, blend cream cheese and sugar. Beat in egg and vanilla.
+               Pour cheese mixture over crust.</li>
+            <li>Toss apples with sugar and cinnamon. Spread apple 
+               mixture over all.</li>
+            <li>Bake for 10 minutes. Reduce heat to 400&deg; F (200&deg; C) and continue 
+               baking for 25 minutes.</li>
+            <li>Sprinkle almonds over top of torte. Continue baking until lightly browned.
+               Cool before removing from pan.</li>
+         </ol>         
+      </article>
+   </section>
+</body>
+</html>
