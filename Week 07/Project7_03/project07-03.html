@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--
+        Louis Fennell III, February 19, 2023, IST-239-W01, Hands-On Project 7-3
+
+        This file, project07-03.html, is the HTML file for the Hands-on Project 7-3. This project
+        is a countdown timer that displays the users current time, and using the JavaScript source
+        file, project07-03.js, calculates and displays the time remaining until the next new year.
+        The next new year is set as January 1st, 2024, at 00:00:00. The current date and time is 
+        displayed above the countdown timer and stored in the div element (<div>), "timeBox". This
+        time is updated every 1000 milliseconds (1 second) and uses the user's local time. This 
+        time is formatted as "MM/DD/YYYY HH:MM:SS". The countdown timer is displayed below the
+        current time and is formatted as "DD:HH:MM:SS". The timer is updated every 1000 milliseconds
+        (1 second) and will display the time remaining until the next new year. The timer will
+        display "00:00:00:00" when the new year has arrived.
+        
+
+        JavaScript 7th Edition
+        Chapter 7
+        Hands-on Project 7-3
+
+        Author: Louis Fennell III
+        Date:   02/19/2023
+
+        Filename: project07-03.html
+    -->
+    <!-- Meta element (<meta/>) that uses the backwards compatible charset attribute of "utf-8". -->
+    <meta charset="utf-8" />
+    <!-- Meta element (<meta/>) that uses the viewport attribute to set the width of the viewport to the width of the device. -->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!-- Title element (<title>) that displays the name of the project at the top of the screen on the web browser's tab. -->
+    <title>Hands-on Project 7-3</title>
+    <!-- Link element (<link>) that links to the provided stylesheet to display custom formatting of the web page. -->
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Added link to JavaScript source, deferred to load after completion of the HTML loading. -->
+    <script src="project07-03.js" defer></script>
+</head>
+
+<body>
+    <!-- Opening header (<header>) element that contains the h1 header. -->
+    <header>
+        <!-- Heading element (<h1>) displays the title of the project at the top of the page, 
+            Hands-on Project 7-3. -->
+        <h1>
+            Hands-on Project 7-3
+        </h1>
+    </header>
+
+    <section>
+        <!-- Heading element (<h1>) displays the name of the project at the top of the page, 
+        Countdown to the New Year. -->
+        <h1>Countdown to the New Year</h1>
+        
+        <!-- Div element (<div>) that displays the current time. -->
+        <div id="timeBox">It is currently: <span id="currentTime"></span></div>
+        <!-- Div element (<div>) that displays the countdown to the new year. -->
+        <div id="clock">      
+            <figure>
+                <!-- Span element (<span>) that displays the number of days until the new year. -->
+                <span id="days">00</span>
+                <!-- Figure caption element (<figcaption>) that displays the word "Days" under the 
+                number of days. -->
+                <figcaption>Days</figcaption>
+            </figure>
+            <figure>
+                <!-- Span element (<span>) that displays the number of hours until the new year. -->
+                <span id="hours">00</span>
+                <!-- Figure caption element (<figcaption>) that displays the word "Hours" under the
+                number of hours. -->
+                <figcaption>Hours</figcaption>
+            </figure>
+            <figure>
+                <!-- Span element (<span>) that displays the number of minutes until the new year. -->
+                <span id="minutes">00</span>
+                <!-- Figure caption element (<figcaption>) that displays the word "Minutes" under the
+                number of minutes. -->
+                <figcaption>Minutes</figcaption>
+            </figure>
+            <figure>
+                <!-- Span element (<span>) that displays the number of seconds until the new year. -->
+                <span id="seconds">00</span>
+                <!-- Figure caption element (<figcaption>) that displays the word "Seconds" under the
+                number of seconds. -->
+                <figcaption>Seconds</figcaption>
+            </figure>         
+        </div>
+    </section>
+</body>
+</html>
