@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <!--
+      Louis Fennell III, March 11, 2023, IST-239-W01, Hands-On Project 10-3
+
+      This file, project10-03.html, is the HTML file for the Hands-on Project 10-3. This file is 
+      the main web page for the Boulder Cycling Routes web application. The web page contains a 
+      form that allows the user to select a starting point and an ending point for their cycling 
+      trip. This page contains two div elements (<div>) with the IDs, "bikeMap" and 
+      "bikeDirections", which will be used by the JavaScript code in the project10-03.js file to
+      display the map and the directions for the cycling trip.
+
+      JavaScript 7th Edition
+      Chapter 10
+      Project 10-3
+
+      Cycling Directions Form
+      Author: Louis Fennell III
+      Date:   3/11/2023
+
+      Filename: project10-3.html
+   -->
+   <!-- Meta element (<meta/>) that uses the backwards compatible charset attribute of "utf-8". -->
+   <meta charset="utf-8" />
+   <!-- Meta element (<meta/>) that uses the viewport attribute to set the width of the viewport to
+	the width of the device. -->
+   <meta name="viewport" content="width=device-width,initial-scale=1.0">
+   <!-- Title element (<title>) that displays the name of the project at the top of the screen on 
+   the web browser's tab. -->
+   <title>Hands-on Project 10-3</title>
+   <!-- Link element (<link>) that links to the provided stylesheet to display custom formatting of
+   the web page. -->
+   <link rel="stylesheet" href="styles.css" />
+   <!-- Added link to JavaScript source, project10-03.js, deferred until the page has loaded. -->
+   <script src="project10-03.js" defer></script>
+   <!-- Added link to Google Maps source, with API key, deferred until the page has loaded. -->
+   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu78qXIVETsz4VjBH0JMa5Xg3YpvP-bJU&callback=showMap" defer></script>
+</head>
+
+<body>
+   <header>
+      <!-- Heading element (<h1>) displays the title of the project at the top of the page,
+      Hands-on Project 10-3. -->
+      <h1>
+         Hands-on Project 10-3
+      </h1>
+   </header>
+
+   <section>
+      <!-- Heading element (<h1>) displays the title of the web application, Boulder Cycling Routes. -->
+      <h1>Boulder Cycling Routes</h1>
+      <!-- Paragraph element (<p>) displays the instructions for the user to select a starting point
+      and an ending point for their cycling outing. -->
+      <p>Choose an origin and a destination of your cycling outing</p>
+      
+      <fieldset>
+         <!-- Select element (<select>) with the ID, "startingPoint" and the size attribute set to
+         7, that displays the options for the users cycling starting point. -->
+         <select id="startingPoint" size="7">
+            <!-- Option element (<option>) that displays the text, Starting Point and is set as the 
+            default option. -->
+            <option value="" selected>Starting Point</option>
+            <!-- Option element (<option>) that displays the text, Folsom Field, Boulder CO. -->
+            <option value="Folsom Field, Boulder CO">Folsom Field</option>
+            <!-- Option element (<option>) that displays the text, NCAR Mesa Laboratory, Boulder CO. -->
+            <option value="NCAR Mesa Laboratory, Boulder CO">NCAR</option>
+            <!-- Option element (<option>) that displays the text, Eben G. Fine Park, Boulder CO. -->
+            <option value="Eben G. Fine Park, Boulder CO">Eben G. Fine Park</option>
+            <!-- Option element (<option>) that displays the text, Eldorado Springs, CO. -->
+            <option value="Eldorado Springs, CO">Eldorado Springs</option>
+            <!-- Option element (<option>) that displays the text, Valmont Bike Park, Boulder CO. -->
+            <option value="Valmont Bike Park, Boulder CO">Valmont Bike Park</option>
+            <!-- Option element (<option>) that displays the text, Kossler Lake, Boulder CO. -->
+            <option value="Kossler Lake, Boulder CO">Kossler Lake</option>
+            <!-- Option element (<option>) that displays the text, Rocky Flats Wildlife Refuge, Boulder CO. -->
+            <option value="Rocky Flats Wildlife Refuge, Boulder CO">Rocky Flats</option>
+            <!-- Option element (<option>) that displays the text, Foothills Community Park, Boulder CO. -->
+            <option value="Foothills Community Park, Boulder CO">Foothills Park</option>
+            <!-- Option element (<option>) that displays the text, Jamestown, CO. -->
+            <option value="Jamestown, CO">Jamestown</option>
+         </select>
+         
+         <!-- Select element (<select>) with the ID, "endingPoint" and the size attribute set to
+         7, that displays the options for the users cycling ending point. -->
+         <select id="endingPoint" size="7">
+            <!-- Option element (<option>) that displays the text, Ending Point and is set as the
+            default option. -->
+            <option value="" selected>Ending Point</option>
+            <!-- Option element (<option>) that displays the text, Folsom Field, Boulder CO. -->
+            <option value="Folsom Field, Boulder CO">Folsom Field</option>
+            <!-- Option element (<option>) that displays the text, NCAR Mesa Laboratory, Boulder CO. -->
+            <option value="NCAR Mesa Laboratory, Boulder CO">NCAR</option>
+            <!-- Option element (<option>) that displays the text, Eben G. Fine Park, Boulder CO. -->
+            <option value="Eben G. Fine Park, Boulder CO">Eben G. Fine Park</option>
+            <!-- Option element (<option>) that displays the text, Eldorado Springs, CO. -->
+            <option value="Eldorado Springs, CO">Eldorado Springs</option>
+            <!-- Option element (<option>) that displays the text, Valmont Bike Park, Boulder CO. -->
+            <option value="Valmont Bike Park, Boulder CO">Valmont Bike Park</option>
+            <!-- Option element (<option>) that displays the text, Kossler Lake, Boulder CO. -->
+            <option value="Kossler Lake, Boulder CO">Kossler Lake</option>
+            <!-- Option element (<option>) that displays the text, Rocky Flats Wildlife Refuge, Boulder CO. -->
+            <option value="Rocky Flats Wildlife Refuge, Boulder CO">Rocky Flats</option>
+            <!-- Option element (<option>) that displays the text, Foothills Community Park, Boulder CO. -->
+            <option value="Foothills Community Park, Boulder CO">Foothills Park</option>
+            <!-- Option element (<option>) that displays the text, Jamestown, CO. -->
+            <option value="Jamestown, CO">Jamestown</option>
+         </select>
+      </fieldset>
+      
+      <!-- Div element (<div>) with the ID, "bikeMap", that displays the map of the cycling route. -->
+      <div id="bikeMap"></div>
+      <!-- Div element (<div>) with the ID, "bikeDirections", that displays the directions for the
+      cycling route. -->
+      <div id="bikeDirections"></div>
+      
+   </section>
+</body>
+</html>
