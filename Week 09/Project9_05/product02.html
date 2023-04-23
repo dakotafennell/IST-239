@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <!--
+      Louis Fennell III, March 6, 2023, IST-239-W01, Hands-On Project 9-5
+
+      This file, product02.html, is one of the product pages for the Hands-On Project 9-5. This
+      page is a product page for the Fingerless Gloves. Each product page has a form that allows
+      the user to select the quantity, size, and color of the product before adding it to their 
+      shopping cart. Each page also contains links to each of the available products and the 
+      shopping cart.
+      
+      JavaScript 7th Edition
+      Chapter 9
+      Hands-on Project 9-5
+
+      Author: Louis Fennell III
+      Date:   03/06/2023
+
+      Filename: product02.html
+   -->
+   <!-- Meta element (<meta/>) that uses the backwards compatible charset attribute of "utf-8". -->
+   <meta charset="utf-8" />
+   <!-- Title element (<title>) that displays the name of the project at the top of the screen on 
+   the web browser's tab. -->
+   <title>Hands-on Project 9-5: Fingerless Gloves</title>
+   <!-- Link element (<link>) that links to the provided stylesheet to display custom formatting of
+   the web page. -->
+   <link rel="stylesheet" href="styles.css" />
+   <!-- Script element (<script>) that links to the provided JavaScript source, deferred to load after 
+   completion of the HTML loading. -->
+   <script src="order.js" defer></script>
+</head>
+
+<body>
+   <header>
+      <!-- Heading element (<h1>) displays the title of the project at the top of the page, 
+      Hands-on Project 9-5. -->
+      <h1>
+         Hands-on Project 9-5
+      </h1>
+   </header>
+
+   <section>
+      <!-- Navigation element (<nav>) that displays the navigation bar at the top of the page. The 
+      navigation bar contains a list of links to the product pages and the shopping cart page. -->
+      <nav>
+         <ul>
+            <!-- List element (<li>) that contains a link to the ArcticBlast Mitts (product01.html) page. -->
+            <li><a href="product01.html">ArcticBlast Mitts</a></li>
+            <!-- List element (<li>) that contains a link to the Fingerless Gloves (product02.html) page. -->
+            <li><a href="product02.html">Fingerless Gloves</a></li>
+            <!-- List element (<li>) that contains a link to the Glomitts (product03.html) page. -->
+            <li><a href="product03.html">Glomitts</a></li>
+            <!-- List element (<li>) that contains a link to the PolyFleece Mitts (product04.html) page. -->
+            <li><a href="product04.html">PolyFleece Mitts</a></li>
+            <!-- List element (<li>) that contains a link to the Shopping cart (cart.html) page. -->
+            <li><a href="cart.html">Your Shopping cart</a></li>
+         </ul>
+      </nav>
+      <!-- Heading element (<h1>) that displays the name of the product, Fingerless Gloves. -->
+      <h1>Fingerless Gloves</h1>
+      <!-- Paragraph element (<p>) that displays a short description of the product. -->
+      <p id="intro">Our Fingerless Glove design keeps your hands warm, while at the same 
+         time allowing greater dexterity in performing outdoor tasks. The gloves
+         are made of lightweight, warm, and quick-drying PolyFleece. As with
+         all of our products, the glove features inline cross-stitching for
+         improved durability.
+      </p>
+      <!-- Table element (<table>) that displays the product information in a table format. The table
+      contains a header row with the product information labels and a data row with the product
+      information. The table also contains a row for the quantity, size, and color of the product.
+      The table also has the id, "ordertable". -->
+      <table id="ordertable">
+         <tr>
+            <!-- Table header element (<th>) that displays the product information label, Product. -->
+            <th>Product</th>
+            <td>
+               <!-- Input element (<input>) that displays the name of the product, Fingerless Gloves.
+               This input element is set to readonly and disabled. This element has an id of, 
+               "product". -->
+               <input id="product" name="product" type="text" value="Fingerless Gloves" readonly="readonly" disabled />
+            </td>
+         </tr>
+         <tr>
+            <!-- Table header element (<th>) that displays the product information label, Price. -->
+            <th>Price</th>
+            <td>
+               <!-- Input element (<input>) that displays the price of the product, $59.95. This
+               input element is set to readonly and disabled. This element has an id of, "price". -->
+               <input id="price" name="price" type="text" value="$59.95" readonly="readonly" disabled />
+            </td>
+         </tr>
+         <tr>
+            <!-- Table header element (<th>) that displays the product information label, Quantity. -->
+            <th>Quantity</th>
+            <td>
+               <!-- Select element (<select>) that contains the quantity options for the product.
+               The number of options (<option>) in the list is 1-10. This selection list contains
+               the id, "quantity". -->
+               <select id="quantity" name="quantity">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+               </select>
+            </td>
+         </tr>
+         <tr>
+            <!-- Table header element (<th>) that displays the product information label, Size. -->
+            <th>Size</th>
+            <td>
+               <!-- Select element (<select>) that contains the size options for the product. 
+               The options (<option>) values are set to the sizes, "small", "medium", "large",
+               and "Xlarge" This selection list contains the id, "size". -->
+               <select id="size" name="size">
+                  <option value="small">Small</option>
+                  <option value="medium">Medium</option>
+                  <option value="large">Large</option>
+                  <option value="Xlarge">XLarge</option>
+               </select>
+            </td>
+         </tr>
+         <tr>
+            <!-- Table header element (<th>) that displays the product information label, Color. -->
+            <th>Color</th>
+            <td>
+               <!-- Select element (<select>) that contains the color options for the product. The
+               options (<option>) values are set to the colors, "burgundy", "red", "black", 
+               and "grey". This selection list contains the id, "color". -->
+               <select id="color" name="color">
+                  <option value="burgundy">Burgundy</option>
+                  <option value="red">Red</option>
+                  <option value="black">Black</option>
+                  <option value="grey">Grey</option>
+               </select>
+            </td>
+         </tr>
+      </table>
+      <!-- Input element (<input>) that displays the Add to Shopping Cart button. This button has
+      the id, "submitButton". -->
+      <input type="button" value="Add to Shopping Cart" id="submitButton" />
+   </section>
+</body>
+</html>

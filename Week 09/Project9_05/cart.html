@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <!--
+      Louis Fennell III, March 6, 2023, IST-239-W01, Hands-On Project 9-5
+
+      This file, cart.html, is the main web page for the Hands-On Project 9-5. This page is a 
+      shopping cart for the Hands-On Project 9-5 that displays the items that the user has added 
+      to their cart formatted in a table. The table contains the item name, quantity, price, and
+      total price for each item. This table is created using the JavaScript source file, cart.js.
+      cart.js uses the empty div element (<div>) with the id, "cartContainer", to display the
+      table.
+
+      JavaScript 7th Edition
+      Chapter 9
+      Hands-on Project 9-5
+
+      Author: Louis Fennell III
+      Date:   03/06/2023
+
+      Filename: cart.html
+   -->
+   <!-- Meta element (<meta/>) that uses the backwards compatible charset attribute of "utf-8". -->
+   <meta charset="utf-8" />
+   <!-- Title element (<title>) that displays the name of the project at the top of the screen on 
+   the web browser's tab. -->
+   <title>Hands-on Project 9-5: Shopping Cart</title>
+   <!-- Link element (<link>) that links to the provided stylesheet to display custom formatting of
+   the web page. -->
+   <link rel="stylesheet" href="styles.css" />
+   <!-- Script element (<script>) that links to the provided cart.js JavaScript source, deferred 
+   to load after completion of the HTML loading. -->
+   <script src="cart.js" defer></script>
+</head>
+
+<body>
+   <header>
+      <!-- Heading element (<h1>) displays the title of the project at the top of the page,
+      Hands-on Project 9-5. -->
+      <h1>
+         Hands-on Project 9-5
+      </h1>
+   </header>
+
+   <section>
+      <!-- Navigation element (<nav>) that displays the navigation bar at the top of the page. The 
+      navigation bar contains a list of links to the product pages and the shopping cart page. -->
+      <nav>
+         <ul>
+            <!-- List element (<li>) that contains a link to the ArticBlast Mitts (product01.html) page. -->
+            <li><a href="product01.html">ArcticBlast Mitts</a></li>
+            <!-- List element (<li>) that contains a link to the Fingerless Gloves (product02.html) page. -->
+            <li><a href="product02.html">Fingerless Gloves</a></li>
+            <!-- List element (<li>) that contains a link to the Glomitts (product03.html) page. -->
+            <li><a href="product03.html">Glomitts</a></li>
+            <!-- List element (<li>) that contains a link to the PolyFleece Mitts (product04.html) page. -->
+            <li><a href="product04.html">PolyFleece Mitts</a></li>
+            <!-- List element (<li>) that contains a link to the Shopping cart (cart.html) page. -->
+            <li><a href="cart.html">Your Shopping cart</a></li>
+         </ul>
+      </nav>       
+      <!-- Heading element (<h1>) that displays the title of the section, Your Shopping Cart. -->
+      <h1>Your Shopping Cart</h1>
+      
+      <!-- Div element (<div>) with the id, "cartContainer". -->
+      <div id="cartContainer">
+      </div>
+   </section>
+</body>
+</html>
