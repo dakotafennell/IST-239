@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <!--
+      Louis Fennell III, February 10, 2023, IST-239-W01, Hands-On Project 6-3
+
+      This file, formsubmit.html, is an HTML file that displays the user's account information
+      that was inputted into the form on the HTML file, project06-03.html. This file is the
+      destination of the form on the HTML file, project06-03.html. The form on the HTML file,
+      project06-03.html, is submitted which then opens this file. This file displays the user's
+      shipping and billing information in two separate tables.
+
+      JavaScript 7th Edition
+      Chapter 6
+      Hands-on Project 6-3
+
+      Author: 
+      Date:   
+
+      Filename: formsubmit.html
+   -->
+   <!-- Meta element (<meta/>) that uses the backwards compatible charset attribute of "utf-8". -->
+   <meta charset="utf-8" />
+   <!-- Meta element (<meta/>) that uses the viewport attribute to set the width of the viewport to the width of the device. -->
+   <meta name="viewport" content="width=device-width,initial-scale=1.0">
+   <!-- Title element (<title>) that displays the name of the project at the top of the screen on the web browser's tab. -->
+   <title>Hands-on Project 6-3</title>
+   <!-- Link element (<link>) that links to the provided stylesheet to display custom formatting of the web page. -->
+   <link rel="stylesheet" href="styles.css" />
+   <!-- Script element (<script>) that adds a "load" event listener to the window object and calls 
+   an anonymous function when detected. -->
+   <script>
+      /* The "load" event listener is added to the window object and calls an anonymous function when detected. */
+      window.addEventListener("load", function(){   
+         // Retrieve the field/value pairs from the URL
+         /* Declares the formData variable and assigns it the value of the location.search property
+         which is the query string of the URL. The slice() method is used to remove the first character
+         of the query string which is the question mark. */
+         var formData = location.search.slice(1);
+         /* The replace() method is used to replace all the plus signs in the query string with a 
+         space. */
+         formData = formData.replace(/\+/g," ");
+         /* The decodeURIComponent() method is used to decode the query string. */
+         formData = decodeURIComponent(formData);
+         /* Declares the formFields variable and assigns it the value of the formData variable split
+         into an array of field/value pairs using the regular expression, /[&=]/g, which means to
+         split the query string into an array of field/value pairs where the field/value pairs are
+         separated by an ampersand (&) or an equal sign (=). */
+         let formFields = formData.split(/[&=]/g);
+
+         // Write the field values to the account table
+         /* Sets the textContent property of the element with the id of "firstnameShip" to the value
+         of the first element in the formFields array. */
+         document.getElementById("firstnameShip").textContent = formFields[1];
+         /* Sets the textContent property of the element with the id of "lastnameShip" to the value
+         of the third element in the formFields array. */
+         document.getElementById("lastnameShip").textContent = formFields[3];
+         /* Sets the textContent property of the element with the id of "address1Ship" to the value
+         of the fifth element in the formFields array. */
+         document.getElementById("address1Ship").textContent = formFields[5];
+         /* Sets the textContent property of the element with the id of "address2Ship" to the value
+         of the seventh element in the formFields array. */
+         document.getElementById("address2Ship").textContent = formFields[7];
+         /* Sets the textContent property of the element with the id of "cityShip" to the value
+         of the ninth element in the formFields array. */
+         document.getElementById("cityShip").textContent = formFields[9];
+         /* Sets the textContent property of the element with the id of "stateShip" to the value
+         of the eleventh element in the formFields array. */
+         document.getElementById("stateShip").textContent = formFields[11];
+         /* Sets the textContent property of the element with the id of "countryShip" to the value
+         of the thirteenth element in the formFields array. */
+         document.getElementById("countryShip").textContent = formFields[13];
+         /* Sets the textContent property of the element with the id of "codeShip" to the value
+         of the fifteenth element in the formFields array. */
+         document.getElementById("codeShip").textContent = formFields[15];
+         /* Sets the textContent property of the element with the id of "firstnameBill" to the value
+         of the seventeenth element in the formFields array. */
+         document.getElementById("firstnameBill").textContent = formFields[19];
+         /* Sets the textContent property of the element with the id of "lastnameBill" to the value
+         of the nineteenth element in the formFields array. */
+         document.getElementById("lastnameBill").textContent = formFields[21];
+         /* Sets the textContent property of the element with the id of "address1Bill" to the value
+         of the twenty-first element in the formFields array. */
+         document.getElementById("address1Bill").textContent = formFields[23];
+         /* Sets the textContent property of the element with the id of "address2Bill" to the value
+         of the twenty-third element in the formFields array. */
+         document.getElementById("address2Bill").textContent = formFields[25];
+         /* Sets the textContent property of the element with the id of "cityBill" to the value
+         of the twenty-fifth element in the formFields array. */
+         document.getElementById("cityBill").textContent = formFields[27];
+         /* Sets the textContent property of the element with the id of "stateBill" to the value
+         of the twenty-seventh element in the formFields array. */
+         document.getElementById("stateBill").textContent = formFields[29];
+         /* Sets the textContent property of the element with the id of "countryBill" to the value
+         of the twenty-ninth element in the formFields array. */
+         document.getElementById("countryBill").textContent = formFields[31];
+         /* Sets the textContent property of the element with the id of "codeBill" to the value
+         of the thirty-first element in the formFields array. */
+         document.getElementById("codeBill").textContent = formFields[33];
+      } );   
+   </script>
+</head>
+
+<body>
+   <!-- Header element (<header>) that contains the title of the project. -->
+   <header>
+      <!-- Heading element (<h1>) that displays the title of the project, Hands-On Project 6-3. -->
+      <h1>
+         Hands-on Project 6-3
+      </h1>
+   </header>
+
+   <section>
+      <!-- Heading element (<h1>) that displays the title of the section, Shipping and Billing. -->
+      <h1>Shipping and Billing</h1>
+      <!-- Table element (<table>) with the id, "shipping". This element creates the table that 
+      will contain the users shipping information. -->
+      <table id="shipping">
+         <!-- Table caption element (<caption>) that displays the caption for the table, Shipping. -->
+         <caption>Shipping</caption>
+         <!-- Opening element (<tr>) for the first row of the Shipping information table. -->
+         <tr>
+            <!-- Table data element (<td>) that displays the field name, "First Name" in the first
+            cell. -->
+            <td>First Name</td>
+            <!-- Second table cell in the first row that displays the "firstnameShip" which is 
+            sourced using the page's inline JavaScript source. -->
+            <td><span id="firstnameShip"></span></td>
+         </tr>
+         <!-- Opening element (<tr>) for the second row of the Shipping information table. -->
+         <tr>
+            <!-- Table data element (<td>) that displays the field name, "Last Name" in the first
+            cell. -->
+            <td>Last Name</td>
+            <!-- Second table cell in the second row that displays the "lastnameShip" which is
+            sourced using the page's inline JavaScript source. -->
+            <td><span id="lastnameShip"></span></td>
+         </tr>
+         <!-- Opening element (<tr>) for the third row of the Shipping information table. -->
+         <tr>
+            <!-- Table data element (<td>) that displays the field name, "Address 1" in the first
+            cell. -->
+            <td>Address 1</td>
+            <!-- Second table cell in the third row that displays the "address1Ship" which is
+            sourced using the page's inline JavaScript source. -->
+            <td><span id="address1Ship"></span></td>
+         </tr>
+         <!-- Opening element (<tr>) for the fourth row of the Shipping information table. -->
+         <tr>
+            <!-- Table data element (<td>) that displays the field name, "Address 2" in the first
+            cell. -->
+            <td>Address 2</td>
+            <!-- Second table cell in the fourth row that displays the "address2Ship" which is
+            sourced using the page's inline JavaScript source. -->
+            <td><span id="address2Ship"></span></td>
+         </tr>
+         <!-- Opening element (<tr>) for the fifth row of the Shipping information table. -->
+         <tr>
+            <!-- Table data element (<td>) that displays the field name, "City" in the first
+            cell. -->
+            <td>City</td>
+            <!-- Second table cell in the fifth row that displays the "cityShip" which is
+            sourced using the page's inline JavaScript source. -->
+            <td><span id="cityShip"></span></td>
+         </tr>
+         <!-- Opening element (<tr>) for the sixth row of the Shipping information table. -->
+         <tr>
+            <!-- Table data element (<td>) that displays the field name, "State" in the first
+            cell. -->
+            <td>State</td>
+            <!-- Second table cell in the sixth row that displays the "stateShip" which is
+            sourced using the page's inline JavaScript source. -->
+            <td><span id="stateShip"></span></td>
+         </tr>
+         <!-- Opening element (<tr>) for the seventh row of the Shipping information table. -->
+         <tr>
+            <!-- Table data element (<td>) that displays the field name, "Country" in the first
+            cell. -->
+            <td>Country</td>
+            <!-- Second table cell in the seventh row that displays the "countryShip" which is
+            sourced using the page's inline JavaScript source. -->
+            <td><span id="countryShip"></span></td>
+         </tr>
+         <!-- Opening element (<tr>) for the eighth row of the Shipping information table. -->
+         <tr>
+            <!-- Table data element (<td>) that displays the field name, "Postal Code" in the first
+            cell. -->
+            <td>Postal Code</td>
+            <!-- Second table cell in the eighth row that displays the "codeShip" which is
+            sourced using the page's inline JavaScript source. -->
+            <td><span id="codeShip"></span></td>
+         </tr>
+      <!-- Closing table (</table>) element for the shipping information table. -->
+      </table>
+      
+      <!-- Table element (<table>) with the id, "billing". This element creates the table that
+      will contain the users billing information. -->
+      <table id="billing">
+         <!-- Table caption element (<caption>) that displays the caption for the table, Billing. -->
+         <caption>Billing</caption>
+         <!-- Opening element (<tr>) for the first row of the Billing information table. -->
+         <tr>
+            <!-- Table data element (<td>) that displays the field name, "First Name" in the first
+            cell. -->
+            <td>First Name</td>
+            <!-- Second table cell in the first row that displays the "firstnameBill" which is
+            sourced using the page's inline JavaScript source. -->
+            <td><span id="firstnameBill"></span></td>
+         </tr>
+         <!-- Opening element (<tr>) for the second row of the Billing information table. -->
+         <tr>
+            <!-- Table data element (<td>) that displays the field name, "Last Name" in the first
+            cell. -->
+            <td>Last Name</td>
+            <!-- Second table cell in the second row that displays the "lastnameBill" which is
+            sourced using the page's inline JavaScript source. -->
+            <td><span id="lastnameBill"></span></td>
+         </tr>
+         <!-- Opening element (<tr>) for the third row of the Billing information table. -->
+         <tr>
+            <!-- Table data element (<td>) that displays the field name, "Address 1" in the first
+            cell. -->
+            <td>Address 1</td>
+            <!-- Second table cell in the third row that displays the "address1Bill" which is
+            sourced using the page's inline JavaScript source. -->
+            <td><span id="address1Bill"></span></td>
+         </tr>
+         <!-- Opening element (<tr>) for the fourth row of the Billing information table. -->
+         <tr>
+            <!-- Table data element (<td>) that displays the field name, "Address 2" in the first
+            cell. -->
+            <td>Address 2</td>
+            <!-- Second table cell in the fourth row that displays the "address2Bill" which is
+            sourced using the page's inline JavaScript source. -->
+            <td><span id="address2Bill"></span></td>
+         </tr>
+         <!-- Opening element (<tr>) for the fifth row of the Billing information table. -->
+         <tr>
+            <!-- Table data element (<td>) that displays the field name, "City" in the first
+            cell. -->
+            <td>City</td>
+            <!-- Second table cell in the fifth row that displays the "cityBill" which is
+            sourced using the page's inline JavaScript source. -->
+            <td><span id="cityBill"></span></td>
+         </tr>
+         <!-- Opening element (<tr>) for the sixth row of the Billing information table. -->
+         <tr>
+            <!-- Table data element (<td>) that displays the field name, "State" in the first
+            cell. -->
+            <td>State</td>
+            <!-- Second table cell in the sixth row that displays the "stateBill" which is
+            sourced using the page's inline JavaScript source. -->
+            <td><span id="stateBill"></span></td>
+         </tr>
+         <!-- Opening element (<tr>) for the seventh row of the Billing information table. -->
+         <tr>
+            <!-- Table data element (<td>) that displays the field name, "Country" in the first
+            cell. -->
+            <td>Country</td>
+            <!-- Second table cell in the seventh row that displays the "countryBill" which is
+            sourced using the page's inline JavaScript source. -->
+            <td><span id="countryBill"></span></td>
+         </tr>
+         <!-- Opening element (<tr>) for the eighth row of the Billing information table. -->
+         <tr>
+            <!-- Table data element (<td>) that displays the field name, "Postal Code" in the first
+            cell. -->
+            <td>Postal Code</td>
+            <!-- Second table cell in the eighth row that displays the "codeBill" which is
+            sourced using the page's inline JavaScript source. -->
+            <td><span id="codeBill"></span></td>
+         </tr>
+      <!-- Closing table (</table>) element for the billing information table. -->
+      </table>      
+   </section>
+<!-- Closing body (</body>) element for the main content of the page. -->
+</body>
+</html>
