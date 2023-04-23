@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <!--
+      Louis Fennell III, February 10, 2023, IST-239-W01, Hands-On Project 6-1
+
+      This file, formsubmit.html, is an HTML file that displays the user's account information
+      that was inputted into the form on the HTML file, project06-01.html. This file is the
+      destination of the form's action attribute. This file pulls the information the user entered
+      in the previous HTML file, project06-01.html, and displays it in a table on this HTML file 
+      using an inline JavaScript source.
+
+      JavaScript 7th Edition
+      Chapter 6
+      Hands-on Project 6-1
+
+      Author: Louis Fennell III
+      Date:   02/10/2023
+
+      Filename: formsubmit.html
+   -->
+   <!-- Meta element (<meta/>) that uses the backwards compatible charset attribute of "utf-8". -->
+   <meta charset="utf-8" />
+   <!-- Meta element (<meta/>) that uses the viewport attribute to set the width of the viewport to the width of the device. -->
+   <meta name="viewport" content="width=device-width,initial-scale=1.0">
+   <!-- Title element (<title>) that displays the name of the project at the top of the screen on the web browser's tab. -->
+   <title>Hands-on Project 6-1</title>
+   <!-- Link element (<link>) that links to the provided stylesheet to display custom formatting of the web page. -->
+   <link rel="stylesheet" href="styles.css" />
+   <!-- Script element (<script>) that uses the window.addEventListener() method to retrieve the 
+   field/value pairs from the URL and write the field values to the account table. -->
+   <script>
+      /* This window.addEventListener() method is used to retrieve the field/value pairs from the 
+      URL and write the field values to the account table. */
+      window.addEventListener("load", function(){
+         // Retrieve the field/value pairs from the URL
+         /* Declares the formData variable and assigns it the value of the location.search property
+         which is the query string of the URL. The slice() method is used to remove the first character
+         of the query string which is the question mark. */
+         var formData = location.search.slice(1);
+         /* The replace() method is used to replace all the plus signs in the query string with spaces. */
+         formData = formData.replace(/\+/g," ");
+         /* The decodeURIComponent() method is used to decode the query string and */
+         formData = decodeURIComponent(formData);
+         /* Declares the formFields variable and assigns it the value of the formData variable split
+         into an array of field/value pairs. The split() method is used to split the query string into
+         an array of field/value pairs. The split() method uses the regular expression /[&=]/g to split
+         the query string into an array of field/value pairs. */
+         let formFields = formData.split(/[&=]/g);
+
+         // Write the field values to the account table
+         /* Assigns the element, "username" the value located in the first position in the 
+         formFields array. */
+         document.getElementById("username").textContent = formFields[1];
+         /* Assigns the element, "email" the value located in the third position in the
+         formFields array. */
+         document.getElementById("email").textContent = formFields[3];
+         /* Assigns the element, "pwd" the value located in the fifth position in the
+         formFields array. */
+         document.getElementById("pwd").textContent = formFields[5];
+         /* Assigns the element, "pwd2" the value located in the seventh position in the
+         formFields array. */
+         document.getElementById("pwd2").textContent = formFields[7];
+      } );
+   </script>
+</head>
+
+<body>
+   <!-- Opening header (<header>) element that contains the h1 header. -->
+   <header>
+      <!-- Heading element (<h1>) displays the title of the project at the top of the page. -->
+      <h1>
+         Hands-on Project 6-1
+      </h1>
+   </header>
+
+   <section>
+      <!-- Heading element (<h1>) displays the title of the section holding the users Account 
+      Information. -->
+      <h1>Account Information</h1>
+      <!-- Table element (<table>) with the id, "account", that will display the users Account 
+      Information. -->
+      <table id="account">
+         <!-- Opening element (<tr>) for the first row of the account information table. -->
+         <tr>
+            <!-- Table data element (<td>) that displays the field name, "Username" in the first cell. -->
+            <td>Username</td>
+            <!-- Second table cell in the first row that displays the "username" which is sourced 
+            from the page's inline JavaScript source. -->
+            <td><span id="username"></span></td>
+         </tr>
+         <!-- Opening element (<tr>) for the second row of the account information table. -->
+         <tr>
+            <!-- Table data element (<td>) that displays the field name, "Email" in the first cell. -->
+            <td>Email</td>
+            <!-- Second table cell in the second row that displays the "email" which is sourced 
+            from the page's inline JavaScript source. -->
+            <td><span id="email"></span></td>
+         </tr> 
+         <!-- Opening element (<tr>) for the third row of the account information table. -->
+         <tr>
+            <!-- Table data element (<td>) that displays the field name, "Password" in the first 
+            cell of the third row. -->
+            <td>Password</td>
+            <!-- Second table cell in the third row that displays the "pwd" which is sourced from
+            the page's inline JavaScript source. -->
+            <td><span id="pwd"></span></td>
+         </tr>
+         <!-- Opening element (<tr>) for the fourth row of the account information table. -->
+         <tr>
+            <!-- Table data element (<td>) that displays the field name, "Confirm Password" in the
+            first cell of the fourth row. -->
+            <td>Confirm Password</td>
+            <!-- Second table cell in the fourth row that displays the "pwd2" which is sourced from
+            the page's inline JavaScript source. -->
+            <td><span id="pwd2"></span></td>
+         </tr>             
+      </table>
+   </section>
+</body>
+</html>

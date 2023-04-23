@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <!--
+      Louis Fennell III, February 10, 2023, IST-239-W01, Hands-On Project 6-1
+
+      This file, project06-01.html, is the HTML file for the Hands-on Project 6-1. This HTML file
+      contains the form element (<form>) with the id, "signup", that encloses the input elements 
+      that make up the account creation form. The form uses the JavaScript source file, 
+      project06-01.js, to validate the user's input. The form when submitted, will send the user to
+      the HTML file, formsubmit.html, which displays the inputted account information.
+
+      JavaScript 7th Edition
+      Chapter 6
+      Hands-on Project 6-1
+
+      Author: Louis Fennell III
+      Date:   02/10/2023
+
+      Filename: project06-01.html
+   -->
+   <!-- Meta element (<meta/>) that uses the backwards compatible charset attribute of "utf-8". -->
+   <meta charset="utf-8" />
+   <meta name="viewport" content="width=device-width,initial-scale=1.0">
+   <!-- Title element (<title>) that displays the name of the project at the top of the screen on the web browser's tab. -->
+   <title>Hands-on Project 6-1</title>
+   <!-- Link element (<link>) that links to the provided stylesheet to display custom formatting of the web page. -->
+   <link rel="stylesheet" href="styles.css" />
+   <!-- Added link to JavaScript source, deferred to load after completion of the HTML loading. -->
+   <script src="project06-01.js" defer></script>
+</head>
+
+<body>
+   <!-- Opening header (<header>) element that contains the h1 header. -->
+   <header>
+      <!-- Heading element (<h1>) displays the title of the project at the top of the page. -->
+      <h1>
+         Hands-on Project 6-1
+      </h1>
+   </header>
+
+   <section>
+      <!-- Heading element (<h1>) that displays the function of the web page, creating an account. -->
+      <h1>Create your Account</h1>
+      <!-- Form element (<form>) that contains the input elements for the user to enter their 
+      account information. -->
+      <form id="signup" name="signup" method="get" action="formsubmit.html">
+         <fieldset>
+            <!-- Legend element (<legend>) that displays the title of the fieldset. -->
+            <legend>Enter your Account Information</legend>
+            <!-- Label element (<label>) that displays the text "Username" next to the input 
+            element. -->
+            <label for="user">Username</label>
+            <!-- Input element (<input>) that allows the user to enter their username. -->
+            <input type="text" id="user" name="user" required />
+
+            <!-- Label element (<label>) that displays the text "Email" next to the input element. -->
+            <label for="email">Email</label>
+            <!-- Input element (<input>) that allows the user to enter their email. This field is
+            using the element attribute, required, so that the field can't be skipped. -->
+            <input type="email" id="email" name="email" required />
+
+            <!-- Label element (<label>) that displays the text "Password" next to the input 
+            element. -->
+            <label for="pwd">Password</label>
+            <!-- Input element (<input>) that allows the user to enter their password. This field 
+               uses the pattern attribute to require the password to be at least 8 characters long 
+               and contain at least one letter and one number. -->
+            <input type="password" id="pwd" name="pwd" required pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"/>
+
+            <!-- Label element (<label>) that displays the text "Confirm Password" next to the 
+            input element. -->
+            <label for="confirm">Confirm Password</label>
+            <!-- Input element (<input>) that allows the user to confirm their password. This field
+            is using the element attribute, required, so that the field can't be skipped. -->
+            <input type="password" id="pwd2" name="pwd2" required  />            
+            
+            <!-- Input element (<input>) that allows the user to submit their account information. -->
+            <input type="submit" id="submitButton" value="Save" />
+         </fieldset>
+      </form>
+   </section>
+</body>
+</html>
