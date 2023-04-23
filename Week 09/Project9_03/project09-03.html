@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <!--
+      Louis Fennell III, March 6, 2023, IST-239-W01, Hands-On Project 9-3
+
+      This file, project09-03.html, is the main web page for the Hands-On Project 9-3. This page is a
+      mock-up of a blog site that displays the title of the blog, SBLogger, the date of last visit,
+      a basic introduction to the blog site, and three blog posts. The first blog post is titled, 
+      Check that Pen!, the second blog post is titled, A Cheesy Monument, and the third blog post 
+      is titled, Jenkins on Ice. Each blog post displays the date of the post, a blurb about the 
+      post, and a link to the full post.
+
+      JavaScript 7th Edition
+      Chapter 9
+      Hands-on Project 9-3
+
+      Author: 
+      Date:   
+
+      Filename: project09-03.html
+   -->
+   <!-- Meta element (<meta/>) that uses the backwards compatible charset attribute of "utf-8". -->
+   <meta charset="utf-8" />
+   <!-- Title element (<title>) that displays the name of the project at the top of the screen on the web browser's tab. -->
+   <title>Hands-on Project 9-3</title>
+   <!-- Link element (<link>) that links to the provided stylesheet to display custom formatting of the web page. -->
+   <link rel="stylesheet" href="styles.css" />
+   <!-- Added link to JavaScript source, deferred to load after completion of the HTML loading. -->
+   <script src="project09-03.js" defer></script>
+</head>
+
+<body>
+   <header>
+      <!-- Heading element (<h1>) displays the title of the project at the top of the page,
+      Hands-on Project 9-3. -->
+      <h1>
+         Hands-on Project 9-3
+      </h1>
+   </header>
+
+   <section>
+      <!-- Heading element (<h1>) displays the title of the blog site, SBLogger. -->
+      <h1>SBLogger</h1>
+      <!-- Paragraph element (<p>) that displays the date of the last visit. The last visit date is
+      stored in the span element (<span>), with the id, "lastVisitDate". -->
+      <p id="lastVisit">Your last visit was: <br /><span id="lastVisitDate">September 10, 2024</span></p>
+      <!-- Paragraph element (<p>) that displays the introduction to the blog site and the name of 
+      the author, Ian Young. -->
+      <p id="intro">
+         SBlogger is the creation of Ian Young, a sports columnist who
+         looks for the unusual and unexpected in the world of sports.
+      </p>
+
+      <!-- Article element (<article>) that displays the first blog post. -->
+      <article>
+         <!-- Heading element (<h1>) that displays the title of the first blog post, Check that 
+         Pen!. -->
+         <h1>Check that Pen!</h1>
+         <!-- Paragraph element (<p>) that displays the date of the first blog post, September 14,
+         2024. This date is stored in the span element (<span>), with the id, "posttime". -->
+         <p>Posted: <span class="posttime">9/14/2024</span></p>
+         <!-- Paragraph element (<p>) that displays a blurb about the first blog post, Check that
+         Pen!. The blurb is stored in the span element (<span>), with the id, "firstPost". -->
+         <p>ESPN is reporting that Houston running back JT Olson has come to 
+            terms with the team, signing a three-year deal for $12 million.
+         </p>
+         <!-- Paragraph element (<p>) that displays a link to the full blog post, Check that Pen!. -->
+         <p>[ <a href="#">read more</a> ]</p>
+       </article>
+
+      <!-- Article element (<article>) that displays the second blog post. -->
+      <article>
+         <!-- Heading element (<h1>) that displays the title of the second blog post, A Cheesy 
+         Monument. -->
+         <h1>A Cheesy Monument</h1>
+         <!-- Paragraph element (<p>) that displays the date of the second blog post, September 11,
+         2024. This date is stored in the span element (<span>), with the id, "posttime". -->
+         <p>Posted: <span class="posttime">9/11/2024</span></p>
+         <!-- Paragraph element (<p>) that displays a blurb about the second blog post, A Cheesy
+         Monument. The blurb is stored in the span element (<span>), with the id, "secondPost". -->
+         <p>Green Bay native Jeff Miller loves Packers QB Todd Rodgers. 
+            And he loves the Packers. And he loves cheese. So what could be 
+            more natural than carving a life-size statue of his beloved 
+            player in a huge block of gouda? 
+         </p>
+         <!-- Paragraph element (<p>) that displays a link to the full blog post, A Cheesy Monument. -->
+         <p>[ <a href="#">read more</a> ]</p>
+      </article>
+
+      <!-- Article element (<article>) that displays the third blog post. -->
+      <article>
+         <!-- Heading element (<h1>) that displays the title of the third blog post, Jenkins on Ice. -->
+         <h1>Jenkins on Ice</h1>
+         <!-- Paragraph element (<p>) that displays the date of the third blog post, September 10,
+         2024. This date is stored in the span element (<span>), with the id, "posttime". -->
+         <p>Posted: <span class="posttime">9/10/2024</span></p>
+         <!-- Paragraph element (<p>) that displays a blurb about the third blog post, Jenkins on
+         Ice. The blurb is stored in the span element (<span>), with the id, "thirdPost". -->
+         <p>Retired b-baller Dennis Jenkins announced today that he has 
+            signed a contract with "Long Sleep" to have his body frozen 
+            before death ... 
+         </p>
+         <!-- Paragraph element (<p>) that displays a link to the full blog post, Jenkins on Ice. -->
+         <p>[ <a href="#">read more</a> ]</p>
+      </article>  
+   </section>
+</body>
+</html>
