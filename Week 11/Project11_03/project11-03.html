@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <!--
+		Louis Fennell III, March 20, 2023, IST-239-W01, Hands-On Project 11-3
+		
+		This file, project11-03.html is the main webpage for the Hands-On Project 11-3. This project
+		will retrieve customer orders from the fictional Wizard Works pyrotechnics company. This 
+		project uses a Perl script file, wworder.pl, that is accessed by the project11-03.js file to
+		create a table based on entering the user credentials of one of the two available users, 
+		Rachel (RW301) and Bernard (BA684). When the user inputs the correct User ID and password
+		combination, the JavaScript file (project11-03.js) fetches the JSON data stored within the
+		Perl script file (wworders.pl) and displays it inside of a table created within the 
+		"orderResult" div element.
+		
+      JavaScript 7th Edition
+      Chapter 11
+      Hands-on Project 11-3
+
+      Author: Louis Fennell III
+      Date:   3/28/2023
+
+      Filename: project11-03.html
+   -->
+	<!-- Meta element (<meta/>) that uses the backwards compatible charset attribute of "utf-8". -->
+   <meta charset="utf-8" />
+	<!-- Meta element (<meta/>) that uses the viewport attribute to set the width of the viewport to
+	the width of the device. -->
+   <meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<!-- Title element (<title>) that displays the name of the project at the top of the screen on 
+   the web browser's tab. -->
+   <title>Hands-on Project 11-3</title>
+	<!-- Link element (<link>) that links to the provided stylesheet to display custom formatting of
+   the web page. -->
+   <link rel="stylesheet" href="styles.css" />
+	<!-- Added link to JavaScript source, project10-3.js, deferred until the page has loaded. -->
+	<script src="project11-03.js" defer></script>
+</head>
+
+<body>
+   <header>
+		<!-- Heading element (<h1>) displays the title of the project at the top of the page,
+      Hands-on Project 11-3. -->
+      <h1>
+         Hands-on Project 11-3
+      </h1>
+   </header>
+
+   <section>
+		<!-- Image element (<img>) with the source for the image, "wwlogo.png". This image is a logo
+		for the fictional company, Wizard Works -->
+      <img src="wwlogo.png" alt="Wizard Works" />
+		<!-- Heading element (<h1>) that displays the title of the web page, View your Order History. -->
+      <h1>View your Order History</h1>
+		<!-- Form element (<form>) that will contain the user log in form. -->
+      <form>
+			<!-- A label element (<label>) containing the name of what goes in the following text box,
+			User ID. Followed by an input element (<input>) that contains the id, "userID" with the type 
+			set as a text box, with the autocomplete attribute set to off. -->
+         <label>User ID</label><input type="text" id="userID" name="userID" autocomplete="off" />
+			<!-- A label element (<label>) containing the name of what goes in the following text box,
+			Password. Followed by an input element (<input>) that contains the id, "pwd" with the type 
+			set as password, with the autocomplete attribute set to off. -->
+         <label>Password</label><input type="password" id="pwd" name="pwd" autocomplete="off"/>
+         <input type="button" value="View Orders" id="viewOrders" />
+      </form>
+      
+		<!-- Dive element (<div>) with the id, "orderResult" that will contain a table, created by 
+		both the project11-03.js and wworder.pl files, that will display different users orders based
+		on their username and password combinations. -->
+      <div id="orderResult"></div>
+   </section>
+</body>
+</html>
